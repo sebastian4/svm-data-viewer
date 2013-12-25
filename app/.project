@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>svm-data-viewer</name>
+	<name>svm-data-viewer-app</name>
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
 	</buildSpec>
 	<natures>
-		<nature>org.nodeclipse.ui.NodeNature</nature>
+		<nature>com.aptana.projects.webnature</nature>
 	</natures>
 </projectDescription>
