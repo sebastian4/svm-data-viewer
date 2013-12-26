@@ -3,10 +3,17 @@ svm-data-viewer
 
 this project shows views of different json rest public data and its rules.
 
-google rest api - rss to jsonp
-------------------------------
+ajax.googleapis.com/ google feed api - rss to jsonp
+---------------------------------------------------
 
-.
+summaries
+
+https://developers.google.com/feed/v1/jsondevguide
+
+examples
+
+http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JCALLBACK&q=http://feeds.bbci.co.uk/news/world/rss.xml
+http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JCALLBACK&q=http://hosted.ap.org/lineups/WORLDHEADS.rss?SITE=AP&SECTION=HOME
 
 earthquake.usgs.gov/ geojsonp
 -----------------------------
