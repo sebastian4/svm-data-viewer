@@ -2,7 +2,9 @@
   "name": "svm-data-viewer",
   "version": "0.0.0",
   "dependencies": {
-    "jquery": "~1.10.2"
+    "jquery": "~1.10.2",
+    "underscore": "~1.5.2",
+    "momentjs": "~2.5.0"
   },
   "devDependencies": {}
 }
