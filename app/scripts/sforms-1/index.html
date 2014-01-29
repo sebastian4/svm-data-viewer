@@ -16,13 +16,14 @@
     <span id="addVar">Add Variable</span>
     </p>
     <p>
-    <input type="submit" value="Check">
+    <input type="button" value="submit" id="submitmustbebuilt">
     </p>
 </form><br/>
 
 <form id="calendarscripts">
 <div id="itemRows">
-Item quantity: <input type="text" name="add_qty" size="4" /> Item name: <input type="text" name="add_name" /> | <input class="addrowbutton" type="button" value="Add row" />
+Item quantity: <input type="text" name="add_qty" size="4" /> Item name: <input type="text" name="add_name" />
+ | <input class="addrowbutton" type="button" value="Add row" /> | <input type="button" value="submit" id="submitcalendarscripts">
 </div>
 </form><br/>
 
@@ -31,6 +32,7 @@ Item quantity: <input type="text" name="add_qty" size="4" /> Item name: <input t
           Entry 1<br><input type="text" name="myInputs[]">
      </div>
      <input type="button" value="Add another text input" id="dynamicInputButton">
+     <input type="button" value="submit" id="dynamicSubmitButton">
 </form><br/>
 
 <script src="../../bower_components/jquery/jquery.js"></script>

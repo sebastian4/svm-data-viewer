@@ -21,6 +21,13 @@ $(function () {
     $(this).parent().before($node);
     });
     
+    $("#submitmustbebuilt").click(function() {
+        var myData = $("form#mustbebuilt").serialize();
+        console.log(myData);
+        var myArrData = $("form#mustbebuilt").serializeArray ();
+        console.log(myArrData);
+    });
+    
     ////
     
     var rowNum = 0;
@@ -39,6 +46,13 @@ $(function () {
 
     $('form#calendarscripts').on('click', '.removable', function(){
        $(this).parent().remove();
+    });
+    
+    $("#submitcalendarscripts").click(function() {
+        var myData = $("form#calendarscripts").serialize();
+        console.log(myData);
+        var myArrData = $("form#calendarscripts").serializeArray ();
+        console.log(myArrData);
     });
     
     ////
@@ -61,5 +75,14 @@ $(function () {
               rscounter++;
          }
     }
-	
+    
+    $("#dynamicSubmitButton").click(function() {
+        var myData = $("form#randomsnippets").serialize();
+        console.log(myData);
+        var myArrData = $("form#randomsnippets").serializeArray ();
+        console.log(myArrData);
+    });
+    
+	////
+    
 });
