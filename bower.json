@@ -6,7 +6,8 @@
     "underscore": "~1.5.2",
     "momentjs": "~2.5.0",
     "jquery-ui": "~1.10.3",
-    "angularjs": "*"
+    "angularjs": "*",
+    "angular": "~1.2.10"
   },
   "devDependencies": {}
 }
