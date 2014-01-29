@@ -9,9 +9,31 @@
 
 <body>
 	
-<h3>sforms-1</h3>
+<h4>sforms-1</h4>
 
-<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<form id="mustbebuilt">
+    <p> 
+    <span id="addVar">Add Variable</span>
+    </p>
+    <p>
+    <input type="submit" value="Check">
+    </p>
+</form><br/>
+
+<form id="calendarscripts">
+<div id="itemRows">
+Item quantity: <input type="text" name="add_qty" size="4" /> Item name: <input type="text" name="add_name" /> | <input class="addrowbutton" type="button" value="Add row" />
+</div>
+</form><br/>
+
+<form id="randomsnippets">
+     <div id="dynamicInputDiv">
+          Entry 1<br><input type="text" name="myInputs[]">
+     </div>
+     <input type="button" value="Add another text input" id="dynamicInputButton">
+</form><br/>
+
+<script src="../../bower_components/jquery/jquery.js"></script>
 <script src="main.js"></script>
 </body>
 
