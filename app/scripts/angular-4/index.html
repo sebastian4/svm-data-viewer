@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>angular form </title>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">
+</head>
+<body data-ng-app="myFormApp" data-ng-controller="foController">
+    <div class="container">
+        <h2>Form Validation with Angular</h2>
+
+        <form name="custForm" data-ng-submit="submitForm()" novalidate>
+
+            <div data-ng-class="{ 'has-error' : custForm.name.$invalid && !custForm.name.$pristine }">
+                <label>Name</label>
+                <input type="text" name="name" data-ng-model="user.name" required>
+                <span data-ng-show="custForm.name.$invalid && !custForm.name.$pristine">You name is required.</span>
+            </div>
+
+            <div data-ng-class="{ 'has-error' : custForm.username.$invalid && !custForm.username.$pristine }">
+                <label>Username</label>
+                <input type="text" name="username" data-ng-model="user.username" data-ng-minlength="3" data-ng-maxlength="10">
+                <span data-ng-show="custForm.username.$error.minlength">Username is too short.</span>
+                <span data-ng-show="custForm.username.$error.maxlength">Username is too long.</span>
+            </div>
+            
+            <div data-ng-class="{ 'has-error' : custForm.age.$invalid && !custForm.age.$pristine }">
+                <label>Age</label>
+                <input type="number" name="age" data-ng-model="user.age" data-ng-maxlength="2">
+                <span data-ng-show="custForm.age.$error.maxlength">you are too old mate</span>
+            </div>
+
+            <div data-ng-class="{ 'has-error' : custForm.email.$invalid && !custForm.email.$pristine }">
+                <label>Email</label>
+                <input type="email" name="email" data-ng-model="user.email">
+                <span data-ng-show="custForm.email.$invalid && !custForm.email.$pristine">Enter a valid email.</span>
+            </div>
+
+            <button class="btn btn-danger" data-ng-disabled="custForm.$invalid">Submit</button>  
+        </form>   
+    </div>
+    
+    <script src="http://code.angularjs.org/1.1.4/angular.js"></script>
+    <script src="../../bower_components/jquery/jquery.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
