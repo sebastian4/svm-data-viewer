@@ -1,0 +1,9 @@
+<div class="container" data-ng-controller="twoController">
+    Name: <br />
+    <input type="text" data-ng-model="car" />
+    <ul >
+        <li data-ng-repeat=
+            "ca in cars | filter:car | orderBy:car"
+        >{{ ca.car }} - {{ ca.color }}</li>
+    </ul>        
+    </div>
