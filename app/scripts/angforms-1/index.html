@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+<meta charset="UTF-8">
+<title>angforms-1</title>
+<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+	
+<h4>angforms-1</h4>
+
+<div ng-app=''>
+<form ng-controller="tenant" novalidate>
+    <div>
+        <div>Name</div> 
+        <input type="text" ng-model="name" placeholder="Organization's Name" required/> 
+        
+        <div>Doing Business As</div> 
+        <input type="text" ng-model="dba" placeholder="Organization known as" required/>
+        
+        <div>Active</div> 
+        <input type="checkbox" ng-model="active" ng-true-value="true" ng-false-value="false" /> 
+        
+        <div>Contacts</div>
+        <ul>
+            <li ng-repeat="cont in contacts">
+                <div>
+                    <span>Name</span>
+                    <span>Email</span>
+                    <span>Phone</span>
+                    <span>Mobile</span>
+                </div>
+                <div>
+                    <span>
+                        <input type="text" ng-model="cont.name" placeholder="Name" required/>
+                    </span>
+                    <span>
+                        <input type="email" ng-model="cont.email" placeholder="Email" required/>
+                    </span>
+                    <span>
+                        <input type="text" ng-model="cont.phone" placeholder="Phone" required/>
+                    </span>
+                    <span>
+                        <input type="text" ng-model="cont.mobile" placeholder="Mobile" />
+                    </span>
+                    <span ng-hide="contacts.length == 1">
+                        <a href ng-click="contacts.splice($index, 1)">remove</a>
+                    </span>    
+                </div>
+            </li>
+            <li>
+                <a href ng-click="newContact()">Add</a>
+            </li>
+        </ul> 
+        
+        <div>Addresses</div>
+        <ul>
+            <li>
+                <a href ng-click="newAddress()">Add</a>
+            </li>
+            <li ng-repeat="addr in addresses">
+                <div>
+                    <span>Type</span>
+                    <span>Address</span>
+                    <span>Location</span>
+                    <span>Zip code</span>
+                </div>
+                <div>
+                    <div>
+                        <span>
+                            <select ng-model="addr.type" ng-options="t.name for t in types"></select>
+                        </span>
+                        <span>
+                            <input type="text" ng-model="addr.street" placeholder="Address" required/>
+                        </span>
+                        <span>
+                            <select ng-model="addr.location" ng-options="l.city group by l.country for l in locations"></select>
+                        </span>
+                        <span>
+                            <input type="text" ng-model="addr.zipCode" placeholder="zip code" />
+                        </span>
+                        <span ng-hide="addresses.length == 1">
+                            <a href ng-click="addresses.splice($index, 1)">remove</a>
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        
+    </div>
+    <div>
+        <button>Crate account</button>
+    </div>
+</form>
+</div>
+
+<script src="../../bower_components/jquery/jquery.js"></script>
+<script src="../../bower_components/angular/angular.js"></script>
+<script src="main.js"></script>
+</body>
+
+</html>
