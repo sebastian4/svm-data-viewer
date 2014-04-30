@@ -1,0 +1,10 @@
+<div class="container" data-ng-controller="oneController">
+    <h2>view 1</h2>
+    Customer Name: <br />
+    <input type="text" data-ng-model="name" />
+    <ul >
+        <li data-ng-repeat=
+            "cust in customers | filter:name | orderBy:name"
+        >{{ cust.name }} - {{ cust.state | uppercase }} - {{ cust.city }}</li>
+    </ul>        
+</div>

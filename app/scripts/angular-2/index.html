@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>angular-1</title>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">
+</head>
+
+<body data-ng-app="demoApp">
+    <div class="container" data-ng-controller="oneController">
+    Name: <br />
+    <input type="text" data-ng-model="name" />
+    <ul >
+        <li data-ng-repeat=
+            "cust in customers | filter:name | orderBy:name"
+        >{{ cust.name }} - {{ cust.state | uppercase }}</li>
+    </ul>        
+    </div>
+
+<script src="http://code.angularjs.org/1.1.4/angular.js"></script>
+<script src="../../bower_components/jquery/jquery.js"></script>
+<script src="main.js"></script>
+</body>
+
+</html>
