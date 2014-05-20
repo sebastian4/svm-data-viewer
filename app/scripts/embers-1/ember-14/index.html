@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ember Starter Kit</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+      
+    {{input type="text" value=name}}
+    <h1 class='title-bar'>Ember Application by {{name}}</h1>
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" id="files">
+      <div class="container-fluid">
+          <div class="row-fluid">
+              <div class="span3">
+                  <table class="table">
+                      <tr>
+                          <td>Files</td>
+                      </tr>
+                      {{#each file in model}}
+                      <tr><td>
+                          {{#linkTo 'file' file}}
+                            {{file.title}} by {{file.author}}
+                          {{/linkTo}}
+                      </td></tr>
+                      {{/each}}
+                  </table>
+              </div>
+              <div class="span9">
+                  {{outlet}}
+              </div>
+          </div>
+      </div>
+  </script>
+
+  <script type="text/x-handlebars" id="file">
+      {{#if isEditing}}
+        {{partial "file/form"}}
+        <button class="btn" {{action 'done'}}>Done</button>
+      {{else}}
+        <button class="btn" {{action 'edit'}}>Edit</button>
+      {{/if}}
+      
+      <h2>{{title}}</h2>
+      <h3>by {{author}}</h3>
+      
+      <div>
+          {{markdown contents}}
+      </div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="file/_form">
+      <p>
+          <label for="title">Title</label>
+          {{input type="text" id="title" value=title}}
+      </p>
+
+      <p>
+          <label for="author">Author</label>
+          {{input type="text" id="author" value=author}}
+      </p>
+      
+      <p>
+          <label for="contents">Contents</label>
+          {{textarea id="contents" value=contents rows=10}}
+      </p>
+  </script>
+  
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/showdown.js"></script>
+  <script src="js/libs/handlebars-1.0.0-rc.4.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.6.js"></script>
+  <script src="js/fixtures.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
