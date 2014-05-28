@@ -1,0 +1,19 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div>
+      <ul data-bind="foreach: todos">
+        <li data-bind="text: text, click: $parent.toggleAction, style: {textDecoration: done() ? 'line-through' : 'none'}">Todo 1</li>
+      </ul>
+    </div>
+    <div>
+      <form>
+        <input id="input" type="text" value=""/>
+        <input type="button" value="Add" data-bind="click: addAction"/>
+      </form>
+    </div>
+  </body>
+  <script type="text/javascript" src="knockout.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</html>
