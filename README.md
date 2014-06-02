@@ -48,3 +48,13 @@ examples
 
 http://itunes.apple.com/search?term=michael+jackson&callback=test
 http://itunes.apple.com/search?term=paul+anka&callback=test
+
+how to connect to a proxy
+-------------------------
+
+https://github.com/drewzboto/grunt-connect-proxy
+http://www.hierax.org/2014/01/grunt-proxy-setup-for-yeoman.html
+http://fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/
+http://alexbachuk.com/yeoman-proxy/
+
+* so now we can use json
