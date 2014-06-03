@@ -1,0 +1,33 @@
+.jui-t2buttons {
+    border-style: dotted;
+    border-color: #0b3e6f;
+    width: 100%;
+    height: 100%;
+}
+
+.jui-t2buttons .buttons-container-div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.jui-t2buttons .buttons-container-div button {
+    width: 42%;
+    height: 100%;
+}
+
+.jui-t2buttons .buttons-container-div button.btn1 {
+    float: left;
+}
+
+.jui-t2buttons .buttons-container-div button.btn2 {
+    float: right;
+}
+
+.jui-t2buttons .buttons-container-div span.midval {
+    border-style: dotted;
+    border-color: grey;
+    border-size: 1px;
+    width: 10%;
+    height: 100%;
+}
