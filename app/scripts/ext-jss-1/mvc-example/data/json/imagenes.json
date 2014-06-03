@@ -1,0 +1,36 @@
+{
+    "data"   : [
+        {
+            "name"     : "buscaminas.jpg",
+            "size"     : 59.8,
+            "createdAt": "15122013"
+        },
+        {
+            "name"     : "no es tan sencillo.jpg",
+            "size"     : 55.2,
+            "createdAt": "15122013"
+        },
+        {
+            "name"     : "password.jpg",
+            "size"     : 61.6,
+            "createdAt": "15122013"
+        },
+        {
+            "name"     : "usb.jpg",
+            "size"     : 105.9,
+            "createdAt": "15122013"
+        },
+        {
+            "name"     : "wallpaper.jpg",
+            "size"     : 26.8,
+            "createdAt": "15122013"
+        },
+        {
+            "name"     : "portatil.png",
+            "size"     : 140.6,
+            "createdAt": "16122013"
+        }
+    ],
+    "success": true,
+    "total"  : 5
+}

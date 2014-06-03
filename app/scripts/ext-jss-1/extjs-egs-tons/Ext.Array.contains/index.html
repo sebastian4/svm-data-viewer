@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="http://cdn.sencha.io/ext-4.0.7-gpl/resources/css/ext-all.css"/>
+    <title>Checking whether an array contains a specific value using the Ext.Array class</title>
+    <!-- http://senchaexamples.com/2012/02/21/checking-whether-an-array-contains-a-specific-value-using-the-ext-array-class/ -->
+</head>
+<body>
+    
+    <script type="text/javascript" src="http://cdn.sencha.io/ext-4.0.7-gpl/ext-all.js"></script>
+    <script type="text/javascript">
+        Ext.application({
+            name: 'Ext.Array.clean()',
+            launch: function () {
+                /* Create two arrays. The 'dirty' array contains empty items. The 'clean' array filters empty items using the static Ext.Array.clean() method. */
+                var arr = ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'];
+                
+                /* Create a panel to display the output. */
+                var panel = Ext.create('Ext.Panel', {
+                    id: 'pan',
+                    title: 'Ext.Array.contains() Example',
+                    height: 200,
+                    bodyPadding: 10,
+                    padding: 20,
+                    dockedItems: [{
+                        xtype: 'toolbar',
+                        dock: 'top',
+                        items: [{
+                            xtype: 'textfield',
+                            id: 'key'
+                        }, {
+                            xtype: 'button',
+                            text: 'Check',
+                            handler: function () {
+                                var value = Ext.getCmp('key').getValue();
+                                Ext.getCmp('foo').setText(" contains '" + value + "'? " + Ext.Array.contains(arr, value));
+                            }
+                        }]
+                    }],
+                    items: [{
+                        xtype: 'label',
+                        text: JSON.stringify(arr)
+                    }, {
+                        xtype: 'label',
+                        id: 'foo',
+                        text: ''
+                    }],
+                    renderTo: Ext.getBody()
+                }); // Ext.create()
+            } // launch
+        }); // Ext.application()
+    </script>
+    
+</body>
+</html>
