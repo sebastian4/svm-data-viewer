@@ -44,6 +44,9 @@ var carouselData = [{
     title : "Another example headline.",
     btnText : "Learn more"
 },{
+    title : "onesito more headline.",
+    btnText : "onesito more"
+},{
     title : "One more for good measure.",
     btnText : "Browse gallery"
 },{

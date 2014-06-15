@@ -25,6 +25,8 @@ var CJobs = Backbone.Collection.extend({
 	model: MJob
 });
 
+////
+
 var VInfo = Backbone.View.extend({
 	// We declare the template to be used by the view
 	template: _.template($('#infoTpl').html()),

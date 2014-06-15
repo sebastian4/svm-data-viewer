@@ -25,6 +25,8 @@ var CJobs = Backbone.Collection.extend({
 	model: MJob
 });
 
+////
+
 var VInfo = Marionette.ItemView.extend({
 	// We declare the template to be used by the view
 	template: '#infoTpl',
@@ -42,7 +44,7 @@ var VJobRow = Marionette.ItemView.extend({
 
 var VJobsList = Marionette.CompositeView.extend({
 	template: '#jobsList',
-	itemViewContainer: 'ol',
+	itemViewContainer: 'ul',
 	itemView: VJobRow
 });
 
