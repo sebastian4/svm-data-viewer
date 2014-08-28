@@ -8,14 +8,23 @@
 </head>
 
 <body>
-
     <div id="weatherObservationModule"></div>
 
-    <p>..</p>
+    <div>
+        <span>Choose your city:</span>
+        <select id="city-chosen">
+            <option value="90210">90210</option>
+            <option value="22015">22015</option>
+            <option value="22042">22042</option>
+            <option value="21078">21078</option>
+        </select>
+    </div>
 
     <script type="text/template" id="weatherObservationModuleTemplate">
-        <h1>Weather for <%= presName %></h1>
-        <div><img src="http://s.imwx.com/img/wxicon/100/<%= Observation.wxIcon %>.png" alt="<%= Observation.text %>" width="100" height="100" id="myIcon"></div>
+        <h2>Weather for <%= presName %></h2>
+        <div>
+            <img src="http://s.imwx.com/img/wxicon/100/<%= Observation.wxIcon %>.png" alt="<%= Observation.text %>" width="100" height="100" id="myIcon">
+        </div>
         <p><%= Observation.temp %>&deg;F and <%= Observation.text %></p>
     </script>
 

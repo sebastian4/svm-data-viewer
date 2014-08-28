@@ -1,18 +1,30 @@
-// TODO:
-//-make lib folder with libs
-//-copy setup of https://github.com/javascript-playground/backbone-require-example
-//http://stackoverflow.com/questions/17316252/separate-template-files-not-rendering-using-backbone-and-underscore
-
 (function($){
 
-    var myWeatherModel = new weatherModel({
-        locid: '90210'
+    console.log("starting app");
+
+    var myWeatherModel = new WeatherModel({
+        //locid: '22042'
     });
 
-    var myWeatherView = new weatherView({
+    var myWeatherView = new WeatherView({
         el: '#weatherObservationModule',
         model: myWeatherModel,
         tmpl: '#weatherObservationModuleTemplate'
+    });
+
+    $( "#city-chosen" ).change(function() {
+        var citySelected = $('#city-chosen :selected').text();
+        console.log("selected "+citySelected);
+
+        myWeatherModel = new WeatherModel({
+            locid: citySelected
+        });
+
+        myWeatherView = new WeatherView({
+            el: '#weatherObservationModule',
+            model: myWeatherModel,
+            tmpl: '#weatherObservationModuleTemplate'
+        });
     });
 
 })(jQuery);
