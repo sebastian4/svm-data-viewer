@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>dweather-1</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="weatherObservationModule"></div>
+
+    <p>..</p>
+
+    <script type="text/template" id="weatherObservationModuleTemplate">
+        <h1>Weather for <%= presName %></h1>
+        <div><img src="http://s.imwx.com/img/wxicon/100/<%= Observation.wxIcon %>.png" alt="<%= Observation.text %>" width="100" height="100" id="myIcon"></div>
+        <p><%= Observation.temp %>&deg;F and <%= Observation.text %></p>
+    </script>
+
+    <script src="http://www.weather.com/blog/samples/jquery-1.7.1.min.js"></script>
+    <script src="http://www.weather.com/blog/samples/underscore-min.js"></script>
+    <script src="http://www.weather.com/blog/samples/backbone-min.js"></script>
+    <script src="js/models/weather.js"></script>
+    <script src="js/views/weatherview.js"></script>
+	<script src="js/app.js"></script>
+</body>
+
+</html>
