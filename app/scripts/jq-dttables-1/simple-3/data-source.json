@@ -1,0 +1,10 @@
+{
+    "iTotalRecords": 50,
+    "iTotalDisplayRecords": 10,
+    "sEcho":10,
+    "aaData": [
+        {"name": "Sitepoint", "url": "http://sitepoint.com", "editor" :{ "name" : "John Doe", "phone" : ["555-1243", "555-2342"], "email":[]}},
+        {"name": "Flippa", "url": "http://flippa.com",  "editor": { "name": "Adam Smith", "email" : ["adam.smith@domain.com"], "phone":[] }},
+        {"name": "Lapper", "url": "http://google.com",  "editor": { "name": "Jocki Smith", "email" : ["adasdrejokh@domain.com"], "phone":["555-2142"] }}
+    ]
+}
