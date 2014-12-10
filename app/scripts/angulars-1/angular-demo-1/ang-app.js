@@ -7,7 +7,7 @@ function ContactController($scope) {
     $scope.contacts = [
         {id:0, 'name': 'Viral', 'email':'hello@gmail.com', 'phone': '123-2343-44'},
         {id:1, 'name': 'Gonzales', 'email':'gonzo@gmail.com', 'phone': '123-1239-44'},
-        {id:1, 'name': 'Dino', 'email':'dinao@gmail.com', 'phone': '123-1129-44'}
+        {id:2, 'name': 'Dino', 'email':'dinao@gmail.com', 'phone': '123-1129-44'}
     ];
 
     $scope.saveContact = function() {
