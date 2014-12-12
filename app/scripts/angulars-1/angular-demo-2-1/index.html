@@ -29,13 +29,14 @@
       <div id="todo-control">
         <form ng-submit="addTodo()">
           <input type="text" ng-model="todoText" class="control-input" placeholder="type todo here">
-          <input class="btn-primary" type="submit" value="add">
+          <input class="btn-primary" type="submit" value="Add">
+          <button ng-click="debug()">debug</button>
         </form>
       </div>
 
     </div>
 
-    <p>.</p>
+    <p>...</p>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <script src="todo.js"></script>
 
