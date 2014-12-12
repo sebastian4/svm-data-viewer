@@ -9,13 +9,29 @@ angular.module('myApp.todo', ['ngRoute'])
   });
 }])
 
-.controller('TodoCtrl', ['$scope','$http', function($scope,$http) {
+.controller('TodoCtrl', ['$scope','$rootScope','$http', function($scope,$rootScope,$http) {
+
+  console.log("todo controller again");
+
+  $scope.init = function () {
+    //console.log("todo controller INIT");
+  };
+
+  if (undefined===$rootScope.currentUserId) {
+  	$rootScope.currentUserId = 0;
+  }
+  if (undefined===$rootScope.currentUserName) {
+  	$rootScope.currentUserName = "nobody";
+  }
+
+  $scope.currentUserId = $rootScope.currentUserId;
+  $scope.currentUserName = $rootScope.currentUserName;
 
   $scope.todos = [
     { id: 10000001, userId: 1, title:'learn angular', completed:false }
   ];
 
-  $http.get('http://localhost:8080/todo/user/1').
+  $http.get('http://localhost:8080/todo/user/'+$rootScope.currentUserId).
         success(function(data) {
         	//console.log(data);
             $scope.todos = data;
@@ -69,6 +85,8 @@ angular.module('myApp.todo', ['ngRoute'])
 
   $scope.debug = function() {
     console.log("debug");
+
+    console.log($rootScope.currentUserId);
 
     var timeInMs = Date.now();
     console.log(timeInMs);

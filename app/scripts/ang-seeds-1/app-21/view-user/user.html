@@ -1,23 +1,17 @@
-<div ng-controller="UserCtrl" class="user-container">
+<div ng-controller="UserCtrl" ng-init="init()" class="user-container">
 
   <div id="user-info">
-  	<span>Users:</span>
+  	<span>Please Select a User:</span>
   </div>
   
   <div id="user-list">
-    <ul class="unstyled">
-      <li ng-repeat="user in users">
-      	<span >{{user.id}}</span>
-        <span >{{user.username}}</span>
-      </li>
-    </ul>
+
+    <select ng-model="currentUser" ng-change="updateUser()" ng-options="user.username for user in users">
+      <option value="">-- choose user --</option>
+    </select>
+
   </div>
 
 </div>
 
 <p>..</p>
-
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>

@@ -1,7 +1,7 @@
-<div ng-controller="TodoCtrl" class="todo-container">
+<div ng-controller="TodoCtrl" ng-init="init()" class="todo-container">
 
   <div id="todo-info">
-  	<span>Todos:</span>
+  	<span>Todos for {{currentUserName}}:</span>
     <span>{{todosRemaining()}} of {{todosSize()}} todos remaining</span>
     [ <a href="" ng-click="archiveTodos()">archive</a> ]
   </div>
