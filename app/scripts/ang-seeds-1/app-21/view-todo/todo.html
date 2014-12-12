@@ -3,7 +3,6 @@
   <div id="todo-info">
   	<span>Todos for {{currentUserName}}:</span>
     <span>{{todosRemaining()}} of {{todosSize()}} todos remaining</span>
-    [ <a href="" ng-click="archiveTodos()">archive</a> ]
   </div>
   
   <div id="todo-list">
@@ -18,9 +17,12 @@
   <div id="todo-control">
     <form ng-submit="addTodo()">
       <input type="text" ng-model="todoText" class="control-input" placeholder="type todo here">
-      <input class="btn-primary" type="submit" value="Add">
-      <button ng-click="debug()">debug</button>
+      <input class="btn-primary" type="submit" value="ADD">
     </form>
+    <br/>
+    <button ng-click="persistTodos()">Persist</button>
+    <button ng-click="archiveTodos()">Archive</button>
+    <button ng-click="debug()">debug</button>
   </div>
 
 </div>

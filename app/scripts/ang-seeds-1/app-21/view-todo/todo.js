@@ -28,7 +28,7 @@ angular.module('myApp.todo', ['ngRoute'])
   $scope.currentUserName = $rootScope.currentUserName;
 
   $scope.todos = [
-    { id: 10000001, userId: 1, title:'learn angular', completed:false }
+    { id: 0, userId: 1, title:'learn angular', completed:false }
   ];
 
   $http.get('http://localhost:8080/todo/user/'+$rootScope.currentUserId).
@@ -56,8 +56,8 @@ angular.module('myApp.todo', ['ngRoute'])
   $scope.addTodo = function() {
     console.log("addTodo");
     var newTodo = { 
-      id: $scope.getRandomNumber(),
-      userId: 1,
+      id: 0,
+      userId: $rootScope.currentUserId,
       title: $scope.todoText, 
       completed: false 
     };
@@ -67,6 +67,10 @@ angular.module('myApp.todo', ['ngRoute'])
   };
 
   ////
+
+  $scope.persistTodos = function() {
+  	console.log("persistTodos");
+  };
 
   $scope.archiveTodos = function() {
     console.log("archiveTodos");
@@ -87,11 +91,7 @@ angular.module('myApp.todo', ['ngRoute'])
     console.log("debug");
 
     console.log($rootScope.currentUserId);
-
-    var timeInMs = Date.now();
-    console.log(timeInMs);
-    var randomNum = (timeInMs % 1000000000);
-    console.log(randomNum);
+    console.log($scope.getRandomNumber());
 
   };
 
