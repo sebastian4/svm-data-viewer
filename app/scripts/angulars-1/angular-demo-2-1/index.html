@@ -20,8 +20,8 @@
       <div id="todo-list">
         <ul class="unstyled">
           <li ng-repeat="todo in todos">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
+            <input type="checkbox" ng-model="todo.completed">
+            <span class="done-{{todo.completed}}">{{todo.title}}</span>
           </li>
         </ul>
       </div>
@@ -35,7 +35,7 @@
 
     </div>
 
-    <p>...</p>
+    <p>.</p>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <script src="todo.js"></script>
 
