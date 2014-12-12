@@ -1,4 +1,33 @@
-<p>This is the partial for todo</p>
+<h3>Todos</h3>
+
+<div ng-controller="TodoCtrl" class="todo-container">
+
+  <div id="todo-info">
+    <span>{{todosRemaining()}} of {{todosSize()}} todos remaining</span>
+    [ <a href="" ng-click="archiveTodos()">archive</a> ]
+  </div>
+  
+  <div id="todo-list">
+    <ul class="unstyled">
+      <li ng-repeat="todo in todos">
+        <input type="checkbox" ng-model="todo.completed">
+        <span class="done-{{todo.completed}}">{{todo.title}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="todo-control">
+    <form ng-submit="addTodo()">
+      <input type="text" ng-model="todoText" class="control-input" placeholder="type todo here">
+      <input class="btn-primary" type="submit" value="Add">
+      <button ng-click="debug()">debug</button>
+    </form>
+  </div>
+
+</div>
+
+<p>...</p>
+
 <p>
   Showing of 'interpolate' filter:
   {{ 'Current version is v%VERSION%.' | interpolate }}
