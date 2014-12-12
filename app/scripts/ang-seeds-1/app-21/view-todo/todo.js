@@ -33,7 +33,6 @@ angular.module('myApp.todo', ['ngRoute'])
 
   $http.get('http://localhost:8080/todo/user/'+$rootScope.currentUserId).
         success(function(data) {
-        	//console.log(data);
             $scope.todos = data;
    });
 
@@ -70,7 +69,28 @@ angular.module('myApp.todo', ['ngRoute'])
 
   $scope.persistTodos = function() {
   	console.log("persistTodos");
-  	
+
+  	var todosLength = $scope.todos.length;
+	for (var i = 0; i < todosLength; i++) {
+		var currentTodo = $scope.todos[i];
+		console.log(currentTodo);
+	    //Do something
+
+	    if (0 === currentTodo.id) {
+	    	currentTodo.id = $scope.getRandomNumber();
+	    	//POST
+	    	$http.post('http://localhost:8080/todo/', currentTodo).
+			        success(function(data) {
+			            console.log("post "+currentTodo.id+" : "+data);
+			});
+	    } else {
+	    	//PUT
+	    	$http.put('http://localhost:8080/todo/'+currentTodo.id, currentTodo).
+			        success(function(data) {
+			            console.log("put "+currentTodo.id+" : "+data);
+			});
+	    }
+	}
   };
 
   $scope.archiveTodos = function() {
