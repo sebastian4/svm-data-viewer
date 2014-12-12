@@ -1,0 +1,13 @@
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.done-false {
+  color: blue;
+}
+
+.control-input {
+	width: 200px;
+}
