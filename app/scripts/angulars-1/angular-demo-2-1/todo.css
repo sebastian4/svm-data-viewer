@@ -11,3 +11,9 @@
 .control-input {
 	width: 200px;
 }
+
+.todo-container {
+	background-color: #FFFAFA;
+	padding: 10px;
+	box-shadow: 10px 10px 5px #888888;
+}
