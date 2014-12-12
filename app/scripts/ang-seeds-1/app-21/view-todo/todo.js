@@ -70,6 +70,7 @@ angular.module('myApp.todo', ['ngRoute'])
 
   $scope.persistTodos = function() {
   	console.log("persistTodos");
+  	
   };
 
   $scope.archiveTodos = function() {

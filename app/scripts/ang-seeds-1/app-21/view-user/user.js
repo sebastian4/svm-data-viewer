@@ -17,6 +17,12 @@ angular.module('myApp.user', ['ngRoute'])
     //console.log("user controller INIT");
   };
 
+  if (undefined===$rootScope.currentUserName) {
+  	$rootScope.currentUserName = "nobody";
+  }
+
+  $scope.currentUserName = $rootScope.currentUserName;
+
   $scope.users = [
     { id: 1, username: "nobody" }
   ];
@@ -34,6 +40,7 @@ angular.module('myApp.user', ['ngRoute'])
    	console.log("updateUser");
    	$rootScope.currentUserId = $scope.currentUser.id;
    	$rootScope.currentUserName = $scope.currentUser.username;
+   	$scope.currentUserName = $rootScope.currentUserName;
    	console.log($rootScope.currentUserId);
    }
 
