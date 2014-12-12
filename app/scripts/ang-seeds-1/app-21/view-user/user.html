@@ -1,3 +1,23 @@
-<h3>Users</h3>
+<div ng-controller="UserCtrl" class="user-container">
 
-<p>This is the partial for user</p>
+  <div id="user-info">
+  	<span>Users:</span>
+  </div>
+  
+  <div id="user-list">
+    <ul class="unstyled">
+      <li ng-repeat="user in users">
+      	<span >{{user.id}}</span>
+        <span >{{user.username}}</span>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<p>..</p>
+
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>

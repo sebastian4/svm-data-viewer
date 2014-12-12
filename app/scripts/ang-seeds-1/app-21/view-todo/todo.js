@@ -9,12 +9,17 @@ angular.module('myApp.todo', ['ngRoute'])
   });
 }])
 
-.controller('TodoCtrl', ['$scope', function($scope) {
+.controller('TodoCtrl', ['$scope','$http', function($scope,$http) {
 
   $scope.todos = [
-    { id: 101, userId: 1, title:'learn angular', completed:true },
-    { id: 102, userId: 1, title:'build an angular app', completed:false }
+    { id: 10000001, userId: 1, title:'learn angular', completed:false }
   ];
+
+  $http.get('http://localhost:8080/todo/user/1').
+        success(function(data) {
+        	//console.log(data);
+            $scope.todos = data;
+   });
 
   ////
  

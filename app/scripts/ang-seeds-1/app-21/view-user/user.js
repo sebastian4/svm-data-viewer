@@ -9,6 +9,20 @@ angular.module('myApp.user', ['ngRoute'])
   });
 }])
 
-.controller('UserCtrl', [function() {
+.controller('UserCtrl', ['$scope','$http', function($scope,$http) {
+
+  $scope.users = [
+    { id: 1, username: "nobody" }
+  ];
+
+  $http.get('http://localhost:8080/user/').
+        success(function(data) {
+            $scope.users = data;
+   });
+
+   ////
+
+
+   ////
 
 }]);
