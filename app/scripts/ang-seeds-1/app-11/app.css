@@ -29,7 +29,7 @@
   padding: 0;
 }
 
-/* */
+/* table */
 
 table.gridtable {
   width: 100%;
@@ -55,6 +55,8 @@ table.gridtable td {
   background-color: #ffffff;
 }
 
+/* charts */
+
 #chartdiv1 {
   height:1000px;
   width:200%;
@@ -63,4 +65,9 @@ table.gridtable td {
 #chartdiv2 {
   height:1500px;
   width:200%;
+}
+
+#chartdiv {
+  height:1000px;
+  width:120%;
 }

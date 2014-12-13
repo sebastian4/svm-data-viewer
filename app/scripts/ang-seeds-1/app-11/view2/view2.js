@@ -78,6 +78,11 @@ angular.module('myApp.view2', ['ngRoute'])
 	      axes: {
 	          //xaxis:{renderer:$.jqplot.CategoryAxisRenderer}
 	          //yaxis: {renderer: $.jqplot.CategoryAxisRenderer}
+	          yaxis: {
+	          	tickOptions: {
+		      		show: false
+		      	}
+	          }
 	      }
 	  });
 
@@ -98,6 +103,11 @@ angular.module('myApp.view2', ['ngRoute'])
 	      axes: {
 	          //xaxis:{renderer:$.jqplot.CategoryAxisRenderer}
 	          //yaxis: {renderer: $.jqplot.CategoryAxisRenderer}
+	          yaxis: {
+	          	tickOptions: {
+		      		show: false
+		      	}
+	          }
 	      }
 	  });
 

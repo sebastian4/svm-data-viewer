@@ -16,37 +16,13 @@ angular.module('myApp.view3', ['ngRoute'])
 	$scope.loans = [];
 	$scope.currentLoan = null;
 
-	var ctx = $("#myChart").get(0).getContext("2d");
-	var myNewChart = null;
-
-	var chartOptions = {};
+	var plot1 = null;
 
 	////
 
 	if (undefined!==$rootScope.loans) {
 		$scope.loans = $rootScope.loans;
 		$scope.currentLoan = null;
-
-		chartOptions = {
-		    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
-		    scaleBeginAtZero : true,
-		    //Boolean - Whether grid lines are shown across the chart
-		    scaleShowGridLines : true,
-		    //String - Colour of the grid lines
-		    scaleGridLineColor : "rgba(0,0,0,.05)",
-		    //Number - Width of the grid lines
-		    scaleGridLineWidth : 1,
-		    //Boolean - If there is a stroke on each bar
-		    barShowStroke : true,
-		    //Number - Pixel width of the bar stroke
-		    barStrokeWidth : 2,
-		    //Number - Spacing between each of the X value sets
-		    barValueSpacing : 5,
-		    //Number - Spacing between data sets within X values
-		    barDatasetSpacing : 1,
-		    //String - A legend template
-		    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
-		};
 	}
 
 	////
@@ -61,29 +37,52 @@ angular.module('myApp.view3', ['ngRoute'])
 
 		var paymentsLength = $scope.currentLoan.payments.length;
 		for (var i = 0; i < paymentsLength; i++) {
-			var dueDate = moment($scope.currentLoan.payments[i].due_date).format("MMM Do YY");
+			var dueDate = moment($scope.currentLoan.payments[i].due_date).format("MM/DD/YY");
 			labels.push(dueDate);
 			sum+=$scope.currentLoan.payments[i].amount;
 		    data.push(sum);
 		}
 
-		var chartData = {
-		    labels: labels,
-		    datasets: [
-		        {
-		            label: "Dataset",
-		            fillColor: "rgba(151,187,205,0.2)",
-		            strokeColor: "rgba(151,187,205,1)",
-		            pointColor: "rgba(151,187,205,1)",
-		            pointStrokeColor: "#fff",
-		            pointHighlightFill: "#fff",
-		            pointHighlightStroke: "rgba(151,187,205,1)",
-		            data: data
-		        }
-		    ]
-		};
+		console.log("cleaning chart");
+	    plot1 = $.jqplot('chartdiv', [[[]]], {});
+	    plot1.redraw();
+	    plot1 = null;
 
-		myNewChart = new Chart(ctx).Bar(chartData, chartOptions);
+	    console.log("redrawing chart");
+
+		plot1 = $.jqplot('chartdiv', [data], {
+		  seriesColors: [
+		  	"#4bb2c5", "#c5b47f", "#EAA228", "#579575", "#839557", 
+		  	"#958c12", "#953579", "#4b5de4", "#d8b83f", "#ff5800", 
+		  	"#0085cc", '#85802b', '#00749F', '#73C774', '#C7754C'
+		  ],
+	      title: 'Payments',
+	      seriesDefaults: {
+	          renderer: $.jqplot.BarRenderer,
+	          rendererOptions: {
+                barMargin: 25,
+                varyBarColor: true
+          	  },
+	          pointLabels:{
+	          	show: true, 
+	          	labels: labels
+	          }
+	      },
+	      axes: {
+	          xaxis: {
+	          	tickOptions: {
+		      		show: false
+		      	}
+	          }
+	      },
+	      highlighter: {
+	        show: true,
+	        sizeAdjust: 20.0,
+	        tooltipContentEditor: function (str, seriesIndex, pointIndex, plot) {
+	        	return labels[pointIndex];
+	        }
+	      }
+	  });
 	}
 
 	////
