@@ -9,7 +9,7 @@ angular.module('myApp.view4', ['ngRoute'])
   });
 }])
 
-.controller('View4Ctrl', ['$scope','$rootScope','$http', function($scope,$rootScope,$http) {
+.controller('View4Ctrl', ['$scope','$rootScope','$http','$filter', function($scope,$rootScope,$http,$filter) {
 
 	console.log("view4 controller again");
 
@@ -47,7 +47,8 @@ angular.module('myApp.view4', ['ngRoute'])
 			var dueDate = moment($scope.currentLoan.payments[i].due_date).format("YYYY-MM-DD");
 			var timePoint = {
 				id: i+1,
-				content: Math.trunc($scope.currentLoan.payments[i].amount),
+				//content: Math.trunc($scope.currentLoan.payments[i].amount),
+				content: $filter('currency')($scope.currentLoan.payments[i].amount),
 				start: dueDate
 			};
 			timePoints.push(timePoint);
