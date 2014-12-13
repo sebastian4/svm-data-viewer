@@ -1,16 +1,17 @@
 <div ng-controller="View4Ctrl" ng-init="init()" class="loan-container">
 
-	<h3>View 4</h3>
+	<h3>View 4: Timeline</h3>
 
 	<div id="loan-list">
-	    <ul class="unstyled">
-	      <li ng-repeat="loan in loans">
-	        <span> === {{loan.name}} =444= {{loan.loanAmount | currency}} ===</span>
-	      </li>
-	    </ul>
+	    <select ng-model="currentLoan" ng-change="updateLoan()" ng-options="loan.name for loan in loans">
+	      <option value="">-- choose loan --</option>
+	    </select>
 	</div>
 
-	<h4>quantity : {{loansSize()}}</h4>
+	<br/>
+	<div id="mytimeline"></div>
+
+	<h4>payments : {{paymentsSize()}}</h4>
 
 	<div id="loan-control">
 		<br/>
