@@ -15,8 +15,18 @@ angular.module('myApp.view2', ['ngRoute'])
 
 	$scope.loans = [];
 
-	if (undefined!==$rootScope.loans) {
-		$scope.loans = $rootScope.loans;
+	$scope.moreThanMax = 0;
+
+	$scope.init = function () {
+	    console.log("view2 controller INIT");
+
+	    if (undefined!==$rootScope.loans) {
+			$scope.loans = $rootScope.loans;
+
+			$scope.updateLoans();
+		}
+
+
 	}
 
 	////
@@ -25,14 +35,54 @@ angular.module('myApp.view2', ['ngRoute'])
 		return $scope.loans.length;
 	}
 
+	////
+
+	$scope.updateLoans = function() {
+
+	  var line1 = [];
+	  var line2 = [];
+	  var labels = [];
+
+	  var loansLength = $scope.loans.length;
+	  for (var i = 0; i < loansLength; i++) {
+
+	  	if ($scope.loans[i].loanAmount < 100000.0) {
+	  		var leftAmount = Math.trunc($scope.loans[i].loanAmount) - Math.trunc($scope.loans[i].paidAmount);
+	  		line1.push(Math.trunc($scope.loans[i].paidAmount));
+	  		line2.push(leftAmount);
+	  		labels.push($scope.loans[i].name);
+	  	} else {
+	  		$scope.moreThanMax++;
+	  	}
+	  }
+
+	  var plot4 = $.jqplot('chartdiv', [line1, line2], {
+	      title: 'Stacked Bar Chart', 
+	      stackSeries: true, 
+	      seriesDefaults: {
+	          renderer: $.jqplot.BarRenderer,
+	          rendererOptions: {
+                barDirection: 'horizontal',
+                barMargin: 25
+          	  },
+	          pointLabels:{
+	          	show: true, 
+	          	labels: labels
+	          }
+	      },
+	      axes: {
+	          //xaxis:{renderer:$.jqplot.CategoryAxisRenderer}
+	          //yaxis: {renderer: $.jqplot.CategoryAxisRenderer}
+	      }
+	  });
+
+	}
 
 	////
 
 	$scope.debug = function() {
 	    console.log("debug");
-
 	    console.log($scope.loans.length);
-
 	};
 
 }]);

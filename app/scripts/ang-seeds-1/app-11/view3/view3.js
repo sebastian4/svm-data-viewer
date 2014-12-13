@@ -19,32 +19,34 @@ angular.module('myApp.view3', ['ngRoute'])
 	var ctx = $("#myChart").get(0).getContext("2d");
 	var myNewChart = null;
 
-	var chartOptions = {
-	    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
-	    scaleBeginAtZero : true,
-	    //Boolean - Whether grid lines are shown across the chart
-	    scaleShowGridLines : true,
-	    //String - Colour of the grid lines
-	    scaleGridLineColor : "rgba(0,0,0,.05)",
-	    //Number - Width of the grid lines
-	    scaleGridLineWidth : 1,
-	    //Boolean - If there is a stroke on each bar
-	    barShowStroke : true,
-	    //Number - Pixel width of the bar stroke
-	    barStrokeWidth : 2,
-	    //Number - Spacing between each of the X value sets
-	    barValueSpacing : 5,
-	    //Number - Spacing between data sets within X values
-	    barDatasetSpacing : 1,
-	    //String - A legend template
-	    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
-	};
+	var chartOptions = {};
 
 	////
 
 	if (undefined!==$rootScope.loans) {
 		$scope.loans = $rootScope.loans;
 		$scope.currentLoan = null;
+
+		chartOptions = {
+		    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+		    scaleBeginAtZero : true,
+		    //Boolean - Whether grid lines are shown across the chart
+		    scaleShowGridLines : true,
+		    //String - Colour of the grid lines
+		    scaleGridLineColor : "rgba(0,0,0,.05)",
+		    //Number - Width of the grid lines
+		    scaleGridLineWidth : 1,
+		    //Boolean - If there is a stroke on each bar
+		    barShowStroke : true,
+		    //Number - Pixel width of the bar stroke
+		    barStrokeWidth : 2,
+		    //Number - Spacing between each of the X value sets
+		    barValueSpacing : 5,
+		    //Number - Spacing between data sets within X values
+		    barDatasetSpacing : 1,
+		    //String - A legend template
+		    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+		};
 	}
 
 	////

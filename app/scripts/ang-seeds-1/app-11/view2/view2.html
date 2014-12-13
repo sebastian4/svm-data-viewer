@@ -1,16 +1,19 @@
 <div ng-controller="View2Ctrl" ng-init="init()" class="loan-container">
 
-	<h3>View 2</h3>
+	<h3>View 2: paid amount vs loan amount</h3>
 
-	<div id="loan-list">
+	<!-- <div id="loan-list">
 	    <ul class="unstyled">
 	      <li ng-repeat="loan in loans">
 	        <span> === {{loan.name}} === {{loan.loanAmount | currency}} ===</span>
 	      </li>
 	    </ul>
-	</div>
+	</div> -->
+
+	<div id="chartdiv"></div>
 
 	<h4>quantity : {{loansSize()}}</h4>
+	<h5>loans greater than 100k : {{moreThanMax}}</h5>
 
 	<div id="loan-control">
 		<br/>

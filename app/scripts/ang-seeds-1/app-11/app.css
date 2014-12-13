@@ -32,6 +32,7 @@
 /* */
 
 table.gridtable {
+  width: 100%;
   font-family: verdana,arial,sans-serif;
   font-size:11px;
   color:#333333;
@@ -52,4 +53,9 @@ table.gridtable td {
   border-style: solid;
   border-color: #666666;
   background-color: #ffffff;
+}
+
+#chartdiv {
+  height:1000px;
+  width:200%;
 }
