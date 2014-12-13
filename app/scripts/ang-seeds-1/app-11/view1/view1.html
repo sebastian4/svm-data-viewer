@@ -23,12 +23,12 @@
 
 		  <tbody>
 			  <tr ng-repeat="loan in loans">
-			    <td data-title="'id'">{{loan.id}}</td>
-			    <td data-title="'id'">{{loan.name}}</td> 
-			    <td data-title="'id'">{{loan.paidAmount}}</td>
-			    <td data-title="'id'">{{loan.loanAmount}} </td>
-			    <td data-title="'id'">{{loan.country}}</td> 
-			    <td data-title="'id'">{{loan.sector}}</td>
+			    <td>{{loan.id}}</td>
+			    <td>{{loan.name}}</td> 
+			    <td>{{loan.paidAmount | currency}}</td>
+			    <td>{{loan.loanAmount | currency}} </td>
+			    <td>{{loan.country}}</td> 
+			    <td>{{loan.sector}}</td>
 			  </tr>
 		  <tbody>
 

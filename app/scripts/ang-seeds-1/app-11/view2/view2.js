@@ -22,11 +22,8 @@ angular.module('myApp.view2', ['ngRoute'])
 
 	    if (undefined!==$rootScope.loans) {
 			$scope.loans = $rootScope.loans;
-
 			$scope.updateLoans();
 		}
-
-
 	}
 
 	////
@@ -43,6 +40,10 @@ angular.module('myApp.view2', ['ngRoute'])
 	  var line2 = [];
 	  var labels = [];
 
+	  var line1x = [];
+	  var line2x = [];
+	  var labelsx = [];
+
 	  var loansLength = $scope.loans.length;
 	  for (var i = 0; i < loansLength; i++) {
 
@@ -52,12 +53,16 @@ angular.module('myApp.view2', ['ngRoute'])
 	  		line2.push(leftAmount);
 	  		labels.push($scope.loans[i].name);
 	  	} else {
+	  		var leftAmount = Math.trunc($scope.loans[i].loanAmount) - Math.trunc($scope.loans[i].paidAmount);
+	  		line1x.push(Math.trunc($scope.loans[i].paidAmount));
+	  		line2x.push(leftAmount);
+	  		labelsx.push($scope.loans[i].name);
 	  		$scope.moreThanMax++;
 	  	}
 	  }
 
-	  var plot4 = $.jqplot('chartdiv', [line1, line2], {
-	      title: 'Stacked Bar Chart', 
+	  var plot4 = $.jqplot('chartdiv1', [line1, line2], {
+	      title: 'Loans Less than 100k', 
 	      stackSeries: true, 
 	      seriesDefaults: {
 	          renderer: $.jqplot.BarRenderer,
@@ -68,6 +73,26 @@ angular.module('myApp.view2', ['ngRoute'])
 	          pointLabels:{
 	          	show: true, 
 	          	labels: labels
+	          }
+	      },
+	      axes: {
+	          //xaxis:{renderer:$.jqplot.CategoryAxisRenderer}
+	          //yaxis: {renderer: $.jqplot.CategoryAxisRenderer}
+	      }
+	  });
+
+	  var plot4x = $.jqplot('chartdiv2', [line1x, line2x], {
+	      title: 'Loans More than 100k', 
+	      stackSeries: true, 
+	      seriesDefaults: {
+	          renderer: $.jqplot.BarRenderer,
+	          rendererOptions: {
+                barDirection: 'horizontal',
+                barMargin: 25
+          	  },
+	          pointLabels:{
+	          	show: true, 
+	          	labels: labelsx
 	          }
 	      },
 	      axes: {

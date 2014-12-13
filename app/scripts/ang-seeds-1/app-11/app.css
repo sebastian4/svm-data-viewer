@@ -55,7 +55,12 @@ table.gridtable td {
   background-color: #ffffff;
 }
 
-#chartdiv {
+#chartdiv1 {
   height:1000px;
+  width:200%;
+}
+
+#chartdiv2 {
+  height:1500px;
   width:200%;
 }
