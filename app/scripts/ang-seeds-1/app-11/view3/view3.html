@@ -1,1 +1,21 @@
-<p>This is the partial for view 3.</p>
+<div ng-controller="View3Ctrl" ng-init="init()" class="loan-container">
+
+	<h3>View 3</h3>
+
+	<div id="loan-list">
+	    <ul class="unstyled">
+	      <li ng-repeat="loan in loans">
+	        <span> === {{loan.name}} =333= {{loan.loanAmount | currency}} ===</span>
+	      </li>
+	    </ul>
+	</div>
+
+	<h4>quantity : {{loansSize()}}</h4>
+
+	<div id="loan-control">
+		<button ng-click="debug()">debug</button>
+  	</div>
+
+</div>
+
+<p>....</p>

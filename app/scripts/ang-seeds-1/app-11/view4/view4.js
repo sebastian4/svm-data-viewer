@@ -9,6 +9,30 @@ angular.module('myApp.view4', ['ngRoute'])
   });
 }])
 
-.controller('View4Ctrl', [function() {
+.controller('View4Ctrl', ['$scope','$rootScope','$http', function($scope,$rootScope,$http) {
+
+	console.log("view4 controller again");
+
+	$scope.loans = [];
+
+	if (undefined!==$rootScope.loans) {
+		$scope.loans = $rootScope.loans;
+	}
+
+	////
+
+	$scope.loansSize = function() {
+		return $scope.loans.length;
+	}
+
+
+	////
+
+	$scope.debug = function() {
+	    console.log("debug");
+
+	    console.log($scope.loans.length);
+
+	};
 
 }]);
