@@ -9,6 +9,30 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', [function() {
+.controller('View2Ctrl', ['$scope','$rootScope','$http', function($scope,$rootScope,$http) {
+
+	console.log("view2 controller again");
+
+	$scope.loans = [];
+
+	if (undefined!==$rootScope.loans) {
+		$scope.loans = $rootScope.loans;
+	}
+
+	////
+
+	$scope.loansSize = function() {
+		return $scope.loans.length;
+	}
+
+
+	////
+
+	$scope.debug = function() {
+	    console.log("debug");
+
+	    console.log($scope.loans.length);
+
+	};
 
 }]);
