@@ -1,13 +1,39 @@
 <div ng-controller="View1Ctrl" ng-init="init()" class="loan-container">
 
-	<h3>View 1</h3>
+	<h3>View 1: table</h3>
+
+	<div id="load-wheel">
+		<img src="http://jimpunk.net/Loading/wp-content/uploads/loading1.gif"/>
+	</div>
 
 	<div id="loan-list">
-	    <ul class="unstyled">
-	      <li ng-repeat="loan in loans">
-	        <span>Loan name: {{loan.name}}, ID: {{loan.id}}</span>
-	      </li>
-	    </ul>
+
+		<table class="gridtable">
+
+		  <thead>
+			  <tr>
+			    <th>Id</th>
+			    <th>Name</th> 
+			    <th>Paid Amount</th>
+			    <th>Loan Amount</th>
+			    <th>Country</th>
+			    <th>Sector</th>
+			  </tr>
+		  </thead>
+
+		  <tbody>
+			  <tr ng-repeat="loan in loans">
+			    <td data-title="'id'">{{loan.id}}</td>
+			    <td data-title="'id'">{{loan.name}}</td> 
+			    <td data-title="'id'">{{loan.paidAmount}}</td>
+			    <td data-title="'id'">{{loan.loanAmount}} </td>
+			    <td data-title="'id'">{{loan.country}}</td> 
+			    <td data-title="'id'">{{loan.sector}}</td>
+			  </tr>
+		  <tbody>
+
+		</table>
+
 	</div>
 
 	<h4>quantity : {{loansSize()}}</h4>

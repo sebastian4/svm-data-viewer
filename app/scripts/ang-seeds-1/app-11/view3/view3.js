@@ -16,6 +16,9 @@ angular.module('myApp.view3', ['ngRoute'])
 	$scope.loans = [];
 	$scope.currentLoan = null;
 
+	var ctx = $("#myChart").get(0).getContext("2d");
+	var myNewChart = null;
+
 	var chartOptions = {
 	    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
 	    scaleBeginAtZero : true,
@@ -78,8 +81,7 @@ angular.module('myApp.view3', ['ngRoute'])
 		    ]
 		};
 
-		var ctx = $("#myChart").get(0).getContext("2d");
-		var myNewChart = new Chart(ctx).Bar(chartData, chartOptions);
+		myNewChart = new Chart(ctx).Bar(chartData, chartOptions);
 	}
 
 	////

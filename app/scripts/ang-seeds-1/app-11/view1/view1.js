@@ -9,29 +9,60 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope','$rootScope','$http', function($scope,$rootScope,$http) {
+.controller('View1Ctrl', ['$scope','$rootScope','$http','$q', function($scope,$rootScope,$http,$q) {
 
 	console.log("view1 controller again");
 
 	$scope.loans = [];
 
-	if (undefined===$rootScope.loans) {
-		$http.get('/scripts/ang-seeds-1/app-11/data/size20.json').
-		    success(function(data) {
-		        $rootScope.loans = data.loanDataList;
-		        $scope.loans = $rootScope.loans;
-		});
-	} else {
-		$scope.loans = $rootScope.loans;
-	}
 
+	$scope.init = function () {
+	    console.log("view1 controller INIT");
+
+	    if (undefined===$rootScope.loans) {
+	    	$rootScope.loans = [];
+
+	    	$q.all([
+			    $http.get('/scripts/ang-seeds-1/app-11/data/page_10_1.json')
+				.success($scope.httpSuccess),
+				$http.get('/scripts/ang-seeds-1/app-11/data/page_10_2.json')
+				.success($scope.httpSuccess),
+				$http.get('/scripts/ang-seeds-1/app-11/data/page_10_3.json')
+				.success($scope.httpSuccess),
+				$http.get('/scripts/ang-seeds-1/app-11/data/page_10_4.json')
+				.success($scope.httpSuccess),
+			    $http.get('/scripts/ang-seeds-1/app-11/data/page_10_5.json')
+				.success($scope.httpSuccess)
+			])
+			.then($scope.recordLoans)
+			.then($scope.setDataTable);
+
+		} else {
+			$scope.recordLoans();
+			$scope.setDataTable();
+		}
+
+	};
 	
 	////
+
+	$scope.httpSuccess = function(data) {
+		$rootScope.loans = $rootScope.loans.concat(data.loanDataList);
+	}
 
 	$scope.loansSize = function() {
 		return $scope.loans.length;
 	}
 
+	$scope.recordLoans = function() {
+		$scope.loans = $rootScope.loans;
+		$('#load-wheel').hide();
+		console.log($scope.loans);
+	}
+
+	$scope.setDataTable = function() {
+		//nothing
+	}
 
 	////
 
