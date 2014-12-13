@@ -3,16 +3,17 @@
 	<h3>View 3</h3>
 
 	<div id="loan-list">
-	    <ul class="unstyled">
-	      <li ng-repeat="loan in loans">
-	        <span> === {{loan.name}} =333= {{loan.loanAmount | currency}} ===</span>
-	      </li>
-	    </ul>
+	    <select ng-model="currentLoan" ng-change="updateLoan()" ng-options="loan.name for loan in loans">
+	      <option value="">-- choose loan --</option>
+	    </select>
 	</div>
 
-	<h4>quantity : {{loansSize()}}</h4>
+	<canvas id="myChart" width="1000" height="500"></canvas>
+
+	<h4>payments : {{paymentsSize()}}</h4>
 
 	<div id="loan-control">
+		<br/>
 		<button ng-click="debug()">debug</button>
   	</div>
 
