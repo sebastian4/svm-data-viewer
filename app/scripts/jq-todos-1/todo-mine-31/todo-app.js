@@ -90,11 +90,8 @@ var TodoApp = {
     var arrayLength = jsonArray.length;
     for (var i = 0; i < arrayLength; i++) {
       console.log(jsonArray[i]);
-
-
-
+      TodoApp.addTodoToList(jsonArray[i].title,jsonArray[i].completed,jsonArray[i].id);
     }
-
   },
 
   sync: function() {
@@ -161,9 +158,9 @@ var TodoApp = {
     console.log("debug2");
 
     jsonArray = [ 
-      { id: 11, userId: 1, title:'learn jquery', completed:false },
-      { id: 12, userId: 1, title:'learn bootstrap', completed:true },
-      { id: 13, userId: 1, title:'learn life', completed:false }
+      { id: 211, userId: 1, title:'learn jquery', completed:false },
+      { id: 212, userId: 1, title:'learn bootstrap', completed:true },
+      { id: 213, userId: 1, title:'learn life', completed:false }
     ];
 
     TodoApp.fromJson(jsonArray);
