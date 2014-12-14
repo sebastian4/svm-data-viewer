@@ -6,7 +6,7 @@ var TodoApp = {
     this.todo_input.on('change', this.addtodo.bind(this.lists));    
     this.lists.on('change','.check_todo',this.mark_complete);
     this.lists.on('click','.remove', this.remove_item);
-    this.lists.on('click','#markAll', this.mark_all);
+    this.lists.on('click','#todo-check-all', this.mark_all);
   },
 
   addtodo: function(){
@@ -19,7 +19,7 @@ var TodoApp = {
   },
 
   addItem: function(){
-    var item = $("<div class='item'></div>");
+    var item = $("<div class='todo-item'></div>");
     item.append($("<input type ='checkbox' class='check_todo'>"))
     var action = $("<div class='todo-description'></div>")
     action.text(TodoApp.value);
@@ -29,7 +29,7 @@ var TodoApp = {
   },
 
   addMarkAll: function(){
-    var markAll = $("<input type ='checkbox' id='markAll'>Mark all as Complete</input>")
+    var markAll = $("<input type ='checkbox' id='todo-check-all'>complete All</input>")
     return markAll;
   },
 
@@ -44,7 +44,7 @@ var TodoApp = {
   remove_item: function(){
     var item = $(this).parent();
     item.remove();
-    if(TodoApp.lists.children().length == 1 && TodoApp.lists.find('#markAll'))
+    if(TodoApp.lists.children().length == 1 && TodoApp.lists.find('#todo-check-all'))
       TodoApp.lists.slideToggle();
   },
 

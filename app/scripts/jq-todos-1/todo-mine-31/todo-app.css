@@ -13,7 +13,7 @@
 	font-size: 20px;
 }
 
-.item {
+.todo-item {
 	padding: 10px
 }
 
@@ -28,12 +28,18 @@
 }
 
 .remove {
-	background: url(destroy.png) no-repeat;
+	background: url(http://wiki.corda.com/confluence/download/attachments/3802839/dash_remove_icon.png) no-repeat;
 	float:right;
 	width:20px;
 	height: 20px;
 }
 
-#markAll {
+#todo-check-all {
 	margin-left: 12px;
 }
+
+/**
+good icons:
+http://png-1.findicons.com/files/icons/2358/boolean/16/done_square.png
+http://wiki.corda.com/confluence/download/attachments/3802839/dash_remove_icon.png
+*/
