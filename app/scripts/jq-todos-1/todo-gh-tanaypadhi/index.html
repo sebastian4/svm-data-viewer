@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--jQuery library-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<!--jQuery UI library-->
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+		<!--Stylesheet-->
+		<link rel="stylesheet" type="text/css" href="todochecklist.css">
+		<!--JavaScript-->
+		<script src="todochecklist.js"></script>
+		<!--Font-->
+		<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+		<title>Checklist.</title>
+	</head>
+
+	<body>
+		
+		<div class="new_task">
+
+			
+
+			<form>
+
+				<input type="text" id="task_title" placeholder="Add new task here">
+				<input type="submit" id="add_button" value="Add new">
+				<input type="button" id="clear_button" value="Clear list">
+			</form>
+
+		</div>
+		<div id="task_list">
+			<!--Header with task count-->
+			<div id="empty"></div>
+
+			<!--Added tasks go here-->
+			<ul id="ulist"></ul>
+
+		</div>
+
+		<div id = "instructions">
+			<p>- Type in a new task and press Enter or click on 'Add New.' Duplicate tasks are not added (the original gets highlighted in orange in case you're skeptical).</p>
+			<p>- Double click on an existing task to edit it. Clear all text from a task when editing it to remove the task altogether. Edits that are duplicates don't update.</p>
+			<p>- 'Clear list' removes all tasks forever. And ever.</p> 
+
+			<p><i>Made in jQuery. Everything is stored locally within your browser.</i></p>
+			
+
+		</div>
+
+	</body>
+
+</html>

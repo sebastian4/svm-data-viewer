@@ -1,0 +1,43 @@
+#lists
+{
+text-align:left;
+background-color:#e5eecc;
+border:solid 1px #c3c3c3;
+display:none;
+width: 350px;
+margin-left: auto;
+margin-right: auto;
+}
+.todo_description
+{
+	display: inline;
+}
+.item
+{
+	padding: 10px
+}
+#enter_todo
+{
+	text-align: center;
+}
+
+.remove
+{
+	background: url(destroy.png) no-repeat;
+	float:right;
+	width:20px;
+	height: 20px;
+}
+#todo
+{
+	width:350px;
+	font-size: 20px;
+	padding: 6px
+}
+.todo_description
+{
+	font-size: 20px
+}
+#markAll{
+	margin-left: 12px;
+}

@@ -1,0 +1,47 @@
+a {
+    margin-left: 20px;
+    color: maroon;
+    text-decoration: none;
+    font-weight: bold;
+}​
+
+/* dom elements being generated AFTER css has loaded */
+/* we can use jQuery to fix this */
+body ul li {
+	list-style: none;
+	display: none;
+}
+
+body .container {
+	width: 600px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#todo { /* removes bullets?? */
+	list-style: none;
+}
+
+form { /* text-align to center inline elements */
+	width: 100%;
+	text-align: center;
+}
+
+label {
+	text-align: center;
+}
+
+ul {
+	text-align: center;
+}
+
+.check {
+  float:left;
+	height: 17px;
+	width: 18px;
+	background-color: purple;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}

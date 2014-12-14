@@ -1,0 +1,92 @@
+
+
+body {
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 24px;
+	background-color: #ffffff;
+}
+ul {
+	list-style-type: none;
+}
+
+#task_list {
+	background-color: #D6D6D6;
+	opacity: 0.81;
+	width: 70%;
+	margin: 30px auto 30px auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#task_list h4	 {
+	margin-top: 4px;
+	text-align: center;
+}
+
+#instructions {
+	font-size: 18px;
+	width: 70%;
+	margin: auto;
+}
+.completed {
+	width: 28px	;
+	height: 28px;	
+	background: #fcfff4;
+	float: left;
+	margin-right: 10px
+	
+}
+.new_task {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+form {
+	text-align: center;
+	width: inherit;
+	margin-left: auto;
+	margin-right: auto;
+}
+#task_title {
+	width: 500px;
+	border: 3px solid white; 
+	-webkit-box-shadow: 
+      inset 0 0 6px #A9A9B0,
+            0 0 6px #A9A9B0; 
+    -moz-box-shadow: 
+      inset 0 0 6px  #A9A9B0,
+            0 0 6px #A9A9B0; 
+    box-shadow: 
+      inset 0 0 6px  #A9A9B0,
+            0 0 6px #A9A9B0; 
+    padding: 9px;
+   
+    }
+
+#add_button, #clear_button {
+
+	background-color:#de3525;
+	border:1px solid #d83525;
+	display:inline-block;
+	color:#ffffff;
+	font-family: 'Alegreya Sans', sans-serif;;
+	font-size:16px;
+	text-shadow:1px 1px 0px #b23e35;
+	height: 40px;
+	margin-left: 10px;
+	width: 150px;
+}
+
+#reset {
+	font-size: 24px;
+	color: #8A2C53;
+	text-align: right;
+
+}
+
+#reset:hover {
+	text-decoration: none;
+}

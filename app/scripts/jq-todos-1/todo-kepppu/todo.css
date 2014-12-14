@@ -1,0 +1,79 @@
+body {
+    background: #eeeeee;
+    font-family: Arial, verdana, san-serif;
+}
+
+a
+{
+    text-decoration: none;
+    padding: 0px;
+    -moz-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input[type=checkbox] {
+	visibility: hidden;
+    margin: -7px;
+}
+
+#todo-app {
+    background: #ffffff;
+    font-size: 18px;
+    
+    width: 350px;
+    padding: 12px;
+    margin-top: 30px;
+    position:absolute;
+    left:50%;
+    margin-left: -212px;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    -webkit-box-shadow: 0 5px 1px 1px #cccccc;
+    box-shadow: 0 5px 5px 1px #cccccc;
+}
+
+#todo-app input[type=text] {
+    display: block;
+    margin: 0;
+    height: 30px;
+    width: 100%;
+    font-size: 18px;
+    appearance: none;
+    border: none;
+    border-bottom: 2px solid #cccccc;
+}
+
+#todo-app input[type=text]:focus,
+#todo-app input[type=text].focus {
+    outline: none;
+    border-bottom: solid 2px #999999;
+}
+
+#todo-app .todo {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: solid 1px #eeeeee;
+    display: block;
+    width: 100%;
+}
+
+#todo-app .remove {
+    float: right;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 18px;
+}
+#todo-app .todo:hover .remove {
+    float: right;
+    color: #800000;
+    text-shadow: 0 0 5px #D9B2B2;
+}
+
+
+
+

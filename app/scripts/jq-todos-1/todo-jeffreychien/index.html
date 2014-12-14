@@ -1,0 +1,107 @@
+<html>
+<head>
+	<?php session_start(); ?>
+	<link href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' rel='stylesheet'>
+	<style>
+		#container{
+			padding-top:10px;
+			width:480px;
+			font-size:25px;
+			position: relative;
+			margin:0 auto;
+			height:200px;
+			background-color:white;
+			height:97%;
+		}
+		#box{
+			font-size:25px;
+			height:50px;
+			width: 466px;
+			font-family: inherit;
+			line-height: 1.4em;
+		}
+		#done, #clear{
+			font-size:25px;
+			height:50px;
+			width:47%;
+			margin-right:10px;
+		}
+		hr{
+			width:480px;
+		}
+		#todos{
+			position: relative;
+			display: inline-block;
+			max-height:70%;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			}
+	</style>
+</head>
+
+<body>
+<div id="container">
+<h1>Todo</h1>
+<input type="text" id="box"placeholder="What Do You Have To Do?"/>
+<br>
+<button class="btn btn-warning" id="done"/>All Done</button>
+<button class="btn btn-danger" id="clear"/>Clear Selected</button>
+<br><br>
+<div id="numtasks"> <b>0 tasks left</b></div><br>
+<div id="todos"></div>
+</div>
+</body>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+	var activeTasks = 0;
+	
+	//This shows how many unfinished tasks there are 
+	function showNumTasks(){
+		$('#numtasks').html("<b>"+ activeTasks + " tasks left</b>");
+	}
+	//Adding a Task
+	$('#box').keypress(function(e) {
+		if(e.which == 13) {
+			var task = $(this).val();
+			if(task){
+				activeTasks++;
+				$('#todos').prepend("<div id='todo' style='width:100%'>" + task + "<hr></div>");
+				$(this).val('');
+				showNumTasks();
+			}
+		}
+	});
+	//Marks off all the current tasks as done
+	$('#done').click(function(){
+		$('#todos').children().css('text-decoration', 'line-through').css('color','gray');
+		activeTasks = 0;
+		showNumTasks();
+	});
+	//Delete all complete tasks
+	$('#clear').click(function(){			
+		$('#todos').children('div').each(function(i){
+			if($(this).css('text-decoration') === 'line-through'){
+				$(this).remove();
+			}
+		});
+		showNumTasks();
+	});
+	//This toggles a task complete or not
+	$('#todo').live("click", function(){
+		if(!($(this).css('text-decoration') === 'line-through')){
+			$(this).css('text-decoration', 'line-through').css('color','gray');
+			activeTasks--;
+			showNumTasks();
+		}
+		else{
+			$(this).css('text-decoration', 'none').css('color','black');
+			activeTasks++;
+			showNumTasks();
+		}
+	});
+});
+</script>
+</html>
