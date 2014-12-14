@@ -3,6 +3,7 @@ var TodoApp = {
   init: function(){
     this.todoList = $("#todo-list");
     this.todoInput = $('#todo-input');
+    this.todoControl = $('#todo-control');
     this.todoInput.on('change', this.addTodo.bind(this.todoList));    
     this.todoList.on('change','.check-todo',this.checkComplete);
     this.todoList.on('click','.todo-remove', this.removeItem);
@@ -12,8 +13,9 @@ var TodoApp = {
   addTodo: function(){
     TodoApp.value = TodoApp.todoInput.val();
     this.append(TodoApp.addTodoTag);
-    if(this.children().length == 1)
+    if(this.children().length == 1) {
       this.prepend(TodoApp.addCheckAllTag);
+    }
     TodoApp.todoInput.val("");
     this.slideDown();		
   },
@@ -29,8 +31,9 @@ var TodoApp = {
   removeItem: function(){
     var item = $(this).parent();
     item.remove();
-    if(TodoApp.todoList.children().length == 1 && TodoApp.todoList.find('#todo-check-all'))
+    if(TodoApp.todoList.children().length == 1 && TodoApp.todoList.find('#todo-check-all')) {
       TodoApp.todoList.slideToggle();
+    }
   },
 
   checkAll: function(){  
@@ -51,7 +54,7 @@ var TodoApp = {
   },
 
   addCheckAllTag: function(){
-    var checkAllTag = $("<input type ='checkbox' id='todo-check-all'>complete All</input>");
+    var checkAllTag = $("<input type ='checkbox' id='todo-check-all'>complete all</input>");
     return checkAllTag;
   }
 

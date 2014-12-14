@@ -41,6 +41,22 @@
 	margin-left: 12px;
 }
 
+#add-todo {
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#todo-control {
+	border: solid 1px #eeeeee;
+	margin: 8px 16px 8px 16px;
+	padding: 6px 8px 6px 8px;
+
+	-webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
 #todo-app-container {
     background: #ffffff;
     font-size: 18px;
