@@ -6,21 +6,17 @@ var TodoApp = {
     this.todoControl = $('#todo-control');
     this.todoSyncButton = $('#todo-sync-btn');
     this.todoArchiveButton = $('#todo-archive-btn');
+    this.todoDebugButton = $('#todo-debug-btn');
     this.todoInput.on('change', this.addTodo);   
     this.todoList.on('change','.check-todo',this.checkComplete);
     this.todoList.on('click','.todo-remove', this.removeItem);
     this.todoList.on('click','#todo-check-all', this.checkAll);
     this.todoSyncButton.on('click', this.sync);
     this.todoArchiveButton.on('click', this.archiving);
+    this.todoDebugButton.on('click', this.debug);
   },
 
-  sync: function() {
-    console.log("sync");
-  },
-
-  archiving: function() {
-    console.log("archive");
-  },
+  ////
 
   addTodo: function() {
     console.log("addTodo");
@@ -59,6 +55,16 @@ var TodoApp = {
 
   ////
 
+  sync: function() {
+    console.log("sync");
+  },
+
+  archiving: function() {
+    console.log("archive");
+  },
+
+  ////
+
   addTodoTag: function() {
     var item = $("<div class='todo-item'></div>");
     item.append($("<input type ='checkbox' class='check-todo'>"));
@@ -72,6 +78,12 @@ var TodoApp = {
   addCheckAllTag: function() {
     var checkAllTag = $("<input type ='checkbox' id='todo-check-all'>complete all</input>");
     return checkAllTag;
+  },
+
+  ////
+
+  debug: function() {
+    console.log("debug");
   }
 
 };
