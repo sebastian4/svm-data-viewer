@@ -3,7 +3,7 @@
 	/*background-color:#e5eecc;*/
 	/*border:solid 1px #c3c3c3;*/
 	display:none;
-	width: 350px;
+	width: 360px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -25,7 +25,7 @@
 }
 
 #todo-input {
-	width:300px;
+	width: 340px;
 	font-size: 20px;
 	padding: 10px;
 }
@@ -45,7 +45,6 @@
 	-webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-
 }
 
 .center-buttons {

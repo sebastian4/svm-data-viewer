@@ -53,6 +53,10 @@ var TodoApp = {
     }
   },
 
+  removeAll: function() {
+    this.todoList.empty();
+  },
+
   checkAll: function() {
     console.log("checkAll");
     $(this).closest('#todo-list').find('.check-todo').prop('checked', this.checked);
@@ -86,15 +90,17 @@ var TodoApp = {
     return checkAllTag;
   },
 
-  ////
+  //// { id: 0, userId: 1, title:'learn angular', completed:false }
 
   debug1: function() {
     console.log("debug1");
     TodoApp.addTodoToList("uno");
+    TodoApp.addTodoToList("dos");
   },
 
   debug2: function() {
     console.log("debug2");
+    TodoApp.removeAll();
   }
 
 };
