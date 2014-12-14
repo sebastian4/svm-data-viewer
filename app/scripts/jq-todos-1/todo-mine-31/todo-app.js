@@ -1,6 +1,7 @@
 var TodoApp = {
 
   init: function(){
+    this.userId = 1;
     this.todoList = $("#todo-list");
     this.todoInput = $('#todo-input-text');
     this.todoControl = $('#todo-control');
@@ -65,6 +66,23 @@ var TodoApp = {
 
   ////
 
+  toJson: function() {
+    console.log("toJson");
+
+  },
+
+  fromJson: function(jsonArray) {
+    console.log("fromJson");
+
+    var arrayLength = jsonArray.length;
+    for (var i = 0; i < arrayLength; i++) {
+      console.log(jsonArray[i]);
+
+
+    }
+
+  },
+
   sync: function() {
     console.log("sync");
   },
@@ -90,17 +108,27 @@ var TodoApp = {
     return checkAllTag;
   },
 
-  //// { id: 0, userId: 1, title:'learn angular', completed:false }
+  //// [ { id: 0, userId: 1, title:'learn angular', completed:false } ]
 
   debug1: function() {
     console.log("debug1");
-    TodoApp.addTodoToList("uno");
-    TodoApp.addTodoToList("dos");
+    // TodoApp.addTodoToList("uno");
+    // TodoApp.addTodoToList("dos");
+    // TodoApp.removeAll();
+    console.log(TodoApp.userId);
   },
 
   debug2: function() {
     console.log("debug2");
-    TodoApp.removeAll();
+
+    jsonArray = [ 
+      { id: 11, userId: 1, title:'learn jquery', completed:false },
+      { id: 12, userId: 1, title:'learn bootstrap', completed:true },
+      { id: 13, userId: 1, title:'learn life', completed:false }
+    ];
+
+    TodoApp.fromJson(jsonArray);
+    
   }
 
 };
