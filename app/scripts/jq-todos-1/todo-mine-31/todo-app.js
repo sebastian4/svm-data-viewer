@@ -82,6 +82,16 @@ var TodoApp = {
   toJson: function() {
     console.log("toJson");
 
+    $( "div.todo-item" ).each(function( index ) {
+
+      var description = $(this).find('div.todo-description').text();
+      var id = $(this).find('div.todo-hidden').text();
+      var completed = $(this).find('input.check-todo').is(':checked');
+
+      console.log( index + " :  " + id + " " + description + " " + completed );
+
+    });
+
   },
 
   fromJson: function(jsonArray) {
@@ -112,6 +122,7 @@ var TodoApp = {
       checked = ' checked';
     }
     var item = $("<div class='todo-item'></div>");
+
     var inputTag = $("<input type ='checkbox' class='check-todo'"+checked+">");
     item.append(inputTag);
 
@@ -148,10 +159,15 @@ var TodoApp = {
 
   debug1: function() {
     console.log("debug1");
-    TodoApp.addTodoToList("uno",false,1001);
-    TodoApp.addTodoToList("dos",true,1002);
+
+    // TodoApp.addTodoToList("uno",false,1001);
+    // TodoApp.addTodoToList("dos",true,1002);
     // TodoApp.removeAll();
+
     console.log(TodoApp.userId);
+
+    var appToJson = TodoApp.toJson();
+    console.log("");
   },
 
   debug2: function() {
