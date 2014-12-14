@@ -5,7 +5,7 @@ var TodoApp = {
     this.todo_input = $('#todo-input');
     this.todo_input.on('change', this.addtodo.bind(this.lists));    
     this.lists.on('change','.check_todo',this.mark_complete);
-    this.lists.on('click','.remove', this.remove_item);
+    this.lists.on('click','.todo-remove', this.remove_item);
     this.lists.on('click','#todo-check-all', this.mark_all);
   },
 
@@ -24,7 +24,7 @@ var TodoApp = {
     var action = $("<div class='todo-description'></div>")
     action.text(TodoApp.value);
     item.append(action)
-    item.append($("<a class='remove'>  </a>"))
+    item.append($("<a class='todo-remove'>  </a>"))
     return item;
   },
 

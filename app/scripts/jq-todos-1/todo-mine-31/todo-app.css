@@ -27,7 +27,7 @@
 	padding: 6px
 }
 
-.remove {
+.todo-remove {
 	background: url(http://wiki.corda.com/confluence/download/attachments/3802839/dash_remove_icon.png) no-repeat;
 	float:right;
 	width:20px;
