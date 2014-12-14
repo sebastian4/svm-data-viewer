@@ -1,20 +1,20 @@
 var TodoApp = {
 
   init: function(){
-    this.lists = $("#todo-list");
-    this.todo_input = $('#todo-input');
-    this.todo_input.on('change', this.addTodo.bind(this.lists));    
-    this.lists.on('change','.check-todo',this.checkComplete);
-    this.lists.on('click','.todo-remove', this.removeItem);
-    this.lists.on('click','#todo-check-all', this.checkAll);
+    this.todoList = $("#todo-list");
+    this.todoInput = $('#todo-input');
+    this.todoInput.on('change', this.addTodo.bind(this.todoList));    
+    this.todoList.on('change','.check-todo',this.checkComplete);
+    this.todoList.on('click','.todo-remove', this.removeItem);
+    this.todoList.on('click','#todo-check-all', this.checkAll);
   },
 
   addTodo: function(){
-    TodoApp.value = TodoApp.todo_input.val()
+    TodoApp.value = TodoApp.todoInput.val()
     this.append(TodoApp.addItem);
     if(this.children().length == 1)
       this.prepend(TodoApp.addCheckAll);
-    TodoApp.todo_input.val("");
+    TodoApp.todoInput.val("");
     this.slideDown();		
   },
 
@@ -44,8 +44,8 @@ var TodoApp = {
   removeItem: function(){
     var item = $(this).parent();
     item.remove();
-    if(TodoApp.lists.children().length == 1 && TodoApp.lists.find('#todo-check-all'))
-      TodoApp.lists.slideToggle();
+    if(TodoApp.todoList.children().length == 1 && TodoApp.todoList.find('#todo-check-all'))
+      TodoApp.todoList.slideToggle();
   },
 
   checkAll: function(){  
