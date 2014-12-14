@@ -47,6 +47,10 @@
     border-radius: 5px;
 }
 
+.todo-hidden {
+    display: none;
+}
+
 .center-buttons {
 	width: 220px;
 	margin-left: auto;

@@ -24,13 +24,14 @@ var TodoApp = {
   addTodo: function() {
     console.log("addTodo");
     var value = TodoApp.todoInput.val();
-    TodoApp.addTodoToList(value,false);
+    var randomId = TodoApp.getRandomNumber();
+    TodoApp.addTodoToList(value,false,randomId);
     TodoApp.todoInput.val("");
   },
 
-  addTodoToList: function(value,completed) {
+  addTodoToList: function(value,completed,id) {
     console.log("addTodoToList");
-    var newTodoTag = TodoApp.addTodoTag(value,completed);
+    var newTodoTag = TodoApp.addTodoTag(value,completed,id);
     TodoApp.todoList.append(newTodoTag);
     if(TodoApp.todoList.children().length == 1) {
       TodoApp.todoList.prepend(TodoApp.addCheckAllTag);
@@ -106,7 +107,7 @@ var TodoApp = {
 
   ////
 
-  addTodoTag: function(value,completed) {
+  addTodoTag: function(value,completed,id) {
     console.log("addTodoTag: "+value+", "+completed);
 
     var checked = '';
@@ -120,6 +121,11 @@ var TodoApp = {
     var action = $("<div class='todo-description'></div>");
     action.text(value);
     item.append(action);
+
+    var idTag = $("<div class='todo-hidden'></div>");
+    idTag.text(id);
+    item.append(idTag);
+
     item.append($("<a class='todo-remove'>  </a>"));
 
     if (true===completed) {
@@ -137,10 +143,16 @@ var TodoApp = {
 
   //// [ { id: 0, userId: 1, title:'learn angular', completed:false } ] .
 
+  getRandomNumber: function() {
+    var timeInMs = Date.now();
+    var randomNum = (timeInMs % 1000000000);
+    return randomNum;
+  },
+
   debug1: function() {
     console.log("debug1");
-    TodoApp.addTodoToList("uno",false);
-    TodoApp.addTodoToList("dos",true);
+    TodoApp.addTodoToList("uno",false,1001);
+    TodoApp.addTodoToList("dos",true,1002);
     // TodoApp.removeAll();
     console.log(TodoApp.userId);
   },
