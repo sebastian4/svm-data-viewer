@@ -41,10 +41,17 @@
 	margin-left: 12px;
 }
 
-#add-todo {
+.todo-button {
 	-webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+
+}
+
+.center-buttons {
+	width: 200px;
+	margin-left: auto;
+    margin-right: auto;
 }
 
 #todo-control {
