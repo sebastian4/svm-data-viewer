@@ -4,7 +4,7 @@ var TodoApp = {
     this.lists = $("#todo-list");
     this.todo_input = $('#todo-input');
     this.todo_input.on('change', this.addtodo.bind(this.lists));    
-    this.lists.on('change','.check_todo',this.markComplete);
+    this.lists.on('change','.check-todo',this.markComplete);
     this.lists.on('click','.todo-remove', this.removeItem);
     this.lists.on('click','#todo-check-all', this.markAll);
   },
@@ -20,7 +20,7 @@ var TodoApp = {
 
   addItem: function(){
     var item = $("<div class='todo-item'></div>");
-    item.append($("<input type ='checkbox' class='check_todo'>"))
+    item.append($("<input type ='checkbox' class='check-todo'>"))
     var action = $("<div class='todo-description'></div>")
     action.text(TodoApp.value);
     item.append(action)
@@ -34,11 +34,11 @@ var TodoApp = {
   },
 
   markComplete: function(){  
-    var todo_description = $(this).siblings(".todo-description"); 
+    var todoDescription = $(this).siblings(".todo-description"); 
     if($(this).is(":checked"))
-      todo_description.css("text-decoration","line-through")
+      todoDescription.css("text-decoration","line-through")
     else 	 
-      todo_description.css("text-decoration","")
+      todoDescription.css("text-decoration","")
   },
 
   removeItem: function(){
@@ -49,8 +49,8 @@ var TodoApp = {
   },
 
   markAll: function(){  
-    $(this).closest('#todo-list').find('.check_todo').prop('checked', this.checked);
-    $(this).closest('#todo-list').find('.check_todo').trigger('change');
+    $(this).closest('#todo-list').find('.check-todo').prop('checked', this.checked);
+    $(this).closest('#todo-list').find('.check-todo').trigger('change');
   }
 
 };
