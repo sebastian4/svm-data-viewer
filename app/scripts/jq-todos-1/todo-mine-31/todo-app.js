@@ -157,10 +157,12 @@ var TodoApp = {
 
   sync: function() {
     console.log("sync");
+
   },
 
   archiving: function() {
     console.log("archive");
+
   },
 
   ////
@@ -196,7 +198,7 @@ var TodoApp = {
   },
 
   addCheckAllTag: function() {
-    var checkAllTag = $("<input type ='checkbox' id='todo-check-all'>complete all</input>");
+    var checkAllTag = $("<input type ='checkbox' id='todo-check-all'> complete all</input>");
     return checkAllTag;
   },
 
