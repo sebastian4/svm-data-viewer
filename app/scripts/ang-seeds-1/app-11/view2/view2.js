@@ -113,11 +113,4 @@ angular.module('myApp.view2', ['ngRoute'])
 
 	}
 
-	////
-
-	$scope.debug = function() {
-	    console.log("debug");
-	    console.log($scope.loans.length);
-	};
-
 }]);

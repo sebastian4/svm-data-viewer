@@ -64,13 +64,4 @@ angular.module('myApp.view1', ['ngRoute'])
 		//nothing
 	}
 
-	////
-
-	$scope.debug = function() {
-	    console.log("debug");
-
-	    console.log($scope.loans.length);
-
-	};
-
 }]);

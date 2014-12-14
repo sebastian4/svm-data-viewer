@@ -98,11 +98,4 @@ angular.module('myApp.view3', ['ngRoute'])
 		return 0;
 	}
 
-	////
-
-	$scope.debug = function() {
-	    console.log("debug");
-	    console.log($scope.loans.length);
-	};
-
 }]);
