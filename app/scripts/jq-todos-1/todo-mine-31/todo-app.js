@@ -79,23 +79,32 @@ var TodoApp = {
 
   ////
 
-  toJson: function() {
-    console.log("toJson");
+  toObject: function() {
+    console.log("toObject");
+
+    var jsonArray = [];
 
     $( "div.todo-item" ).each(function( index ) {
 
       var description = $(this).find('div.todo-description').text();
       var id = $(this).find('div.todo-hidden').text();
       var completed = $(this).find('input.check-todo').is(':checked');
-
       console.log( index + " :  " + id + " " + description + " " + completed );
 
+      var todoItem = {
+        id: parseInt(id),
+        description: description,
+        completed: completed
+      };
+
+      jsonArray.push(todoItem);
     });
 
+    return jsonArray;
   },
 
-  fromJson: function(jsonArray) {
-    console.log("fromJson");
+  fromObject: function(jsonArray) {
+    console.log("fromObject");
 
     var arrayLength = jsonArray.length;
     for (var i = 0; i < arrayLength; i++) {
@@ -166,8 +175,8 @@ var TodoApp = {
 
     console.log(TodoApp.userId);
 
-    var appToJson = TodoApp.toJson();
-    console.log("");
+    var appToJson = TodoApp.toObject();
+    console.log(appToJson);
   },
 
   debug2: function() {
@@ -179,7 +188,8 @@ var TodoApp = {
       { id: 213, userId: 1, title:'learn life', completed:false }
     ];
 
-    TodoApp.fromJson(jsonArray);
+    console.log(jsonArray);
+    TodoApp.fromObject(jsonArray);
     
   }
 
