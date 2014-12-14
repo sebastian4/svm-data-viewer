@@ -1,7 +1,7 @@
 var TodoApp = {
 
-  init: function(){
-    this.userId = 1;
+  init: function() {
+    this.userId = 0;
     this.todoList = $("#todo-list");
     this.todoInput = $('#todo-input-text');
     this.todoControl = $('#todo-control');
@@ -17,9 +17,27 @@ var TodoApp = {
     this.todoArchiveButton.on('click', this.archiving);
     this.todoD1Button.on('click', this.debug1);
     this.todoD2Button.on('click', this.debug2);
+    TodoApp.getUsers();
   },
 
   ////
+
+  getUsers: function() {
+    console.log("getUsers");
+    $.ajax({
+      type: "GET",
+      dataType: "json",
+      url: "http://localhost:8080/user/",
+      //data: data,
+      success: function(data) {
+        console.log(data);
+        var dataLength = data.length;
+        for (var i = 0; i < dataLength; i++) {
+          $('#todo-user-select').append('<option value='+data[i].id+'>'+data[i].username+'</option>');
+        }
+      }
+    });
+  },
 
   addTodo: function() {
     console.log("addTodo");
