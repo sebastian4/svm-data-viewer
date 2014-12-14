@@ -1,7 +1,7 @@
 #todo-list {
 	text-align:left;
 	display:none;
-	width: 580px;
+	width: 96%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -23,7 +23,7 @@
 }
 
 #todo-input-text {
-	width: 420px;
+	width: 80%;
 	font-size: 20px;
 	padding: 8px;
 }
@@ -31,7 +31,7 @@
 .todo-remove {
 	background: url(http://wiki.corda.com/confluence/download/attachments/3802839/dash_remove_icon.png) no-repeat;
 	float:right;
-	width:20px;
+	width: 4%;
 	height: 20px;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .center-buttons {
-	width: 220px;
+	width: 50%;
 	margin-left: auto;
     margin-right: auto;
 }
@@ -69,12 +69,11 @@
     background: #ffffff;
     font-size: 18px;
     
-    width: 600px;
+    width: 96%;
     padding: 12px;
     margin-top: 30px;
-    position:absolute;
-    left:50%;
-    margin-left: -212px;
+    margin-left: auto;
+    margin-right: auto;
 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
