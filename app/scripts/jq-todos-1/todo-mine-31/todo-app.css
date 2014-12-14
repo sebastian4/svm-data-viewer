@@ -49,22 +49,6 @@
     display: none;
 }
 
-.center-buttons {
-	width: 50%;
-	margin-left: auto;
-    margin-right: auto;
-}
-
-#todo-control {
-	border: solid 1px #eeeeee;
-	margin: 8px 16px 8px 16px;
-	padding: 6px 8px 6px 8px;
-
-	-webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-}
-
 #todo-app-container {
     background: #ffffff;
     font-size: 18px;
@@ -82,9 +66,3 @@
     -webkit-box-shadow: 0 5px 1px 1px #cccccc;
     box-shadow: 0 5px 5px 1px #cccccc;
 }
-
-/**
-good icons:
-http://png-1.findicons.com/files/icons/2358/boolean/16/done_square.png
-http://wiki.corda.com/confluence/download/attachments/3802839/dash_remove_icon.png
-*/
