@@ -11,26 +11,11 @@ var TodoApp = {
 
   addTodo: function(){
     TodoApp.value = TodoApp.todoInput.val()
-    this.append(TodoApp.addItem);
+    this.append(TodoApp.addTodoTag);
     if(this.children().length == 1)
-      this.prepend(TodoApp.addCheckAll);
+      this.prepend(TodoApp.addCheckAllTag);
     TodoApp.todoInput.val("");
     this.slideDown();		
-  },
-
-  addItem: function(){
-    var item = $("<div class='todo-item'></div>");
-    item.append($("<input type ='checkbox' class='check-todo'>"))
-    var action = $("<div class='todo-description'></div>")
-    action.text(TodoApp.value);
-    item.append(action)
-    item.append($("<a class='todo-remove'>  </a>"))
-    return item;
-  },
-
-  addCheckAll: function(){
-    var checkAllTag = $("<input type ='checkbox' id='todo-check-all'>complete All</input>")
-    return checkAllTag;
   },
 
   checkComplete: function(){  
@@ -51,6 +36,23 @@ var TodoApp = {
   checkAll: function(){  
     $(this).closest('#todo-list').find('.check-todo').prop('checked', this.checked);
     $(this).closest('#todo-list').find('.check-todo').trigger('change');
+  },
+
+  ////
+
+  addTodoTag: function(){
+    var item = $("<div class='todo-item'></div>");
+    item.append($("<input type ='checkbox' class='check-todo'>"))
+    var action = $("<div class='todo-description'></div>")
+    action.text(TodoApp.value);
+    item.append(action)
+    item.append($("<a class='todo-remove'>  </a>"))
+    return item;
+  },
+
+  addCheckAllTag: function(){
+    var checkAllTag = $("<input type ='checkbox' id='todo-check-all'>complete All</input>")
+    return checkAllTag;
   }
 
 };
