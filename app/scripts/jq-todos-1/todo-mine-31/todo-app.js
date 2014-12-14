@@ -40,13 +40,13 @@ var TodoApp = {
 
   checkComplete: function() {
     console.log("checkComplete");
-    console.log(this);
+    //console.log(this);
     TodoApp.checkCompleteOnElement($(this));
   },
 
   checkCompleteOnElement: function($element) {
     console.log("checkCompleteOnElement");
-    console.log($element);
+    //console.log($element);
     var todoDescription = $element.siblings(".todo-description");
     if($element.is(":checked")) {
       todoDescription.css("text-decoration","line-through");
@@ -108,6 +108,7 @@ var TodoApp = {
 
   addTodoTag: function(value,completed) {
     console.log("addTodoTag: "+value+", "+completed);
+
     var checked = '';
     if (true===completed) {
       checked = ' checked';
@@ -116,19 +117,15 @@ var TodoApp = {
     var inputTag = $("<input type ='checkbox' class='check-todo'"+checked+">");
     item.append(inputTag);
 
-    
-
     var action = $("<div class='todo-description'></div>");
     action.text(value);
     item.append(action);
     item.append($("<a class='todo-remove'>  </a>"));
 
     if (true===completed) {
-      console.log("addTodoTag .. "+value+", "+completed);
-      console.log(inputTag[0]);
+      //console.log(inputTag[0]);
       TodoApp.checkCompleteOnElement(inputTag);
     }
-
 
     return item;
   },
