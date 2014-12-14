@@ -44,13 +44,23 @@ var TodoApp = {
   getCurrentUser: function() {
     TodoApp.userId = TodoApp.selectUser.val();
     console.log("getCurrentUser "+TodoApp.userId);
+    TodoApp.getTodos();
   },
 
   getTodos: function() {
     console.log("getTodos");
 
-
-
+    $.ajax({
+      type: "GET",
+      dataType: "json",
+      url: "http://localhost:8080/todo/user/"+TodoApp.userId,
+      //data: data,
+      success: function(data) {
+        console.log(data);
+        TodoApp.removeAll();
+        TodoApp.fromObject(data);
+      }
+    });
   },
 
   addTodo: function() {
