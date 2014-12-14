@@ -24,12 +24,14 @@ var TodoApp = {
   addTodo: function() {
     console.log("addTodo");
     var value = TodoApp.todoInput.val();
-    TodoApp.addTodoToList(value);
+    TodoApp.addTodoToList(value,false);
     TodoApp.todoInput.val("");
   },
 
-  addTodoToList: function(value) {
-    TodoApp.todoList.append(TodoApp.addTodoTag(value));
+  addTodoToList: function(value,completed) {
+    console.log("addTodoToList");
+    var newTodoTag = TodoApp.addTodoTag(value,completed);
+    TodoApp.todoList.append(newTodoTag);
     if(TodoApp.todoList.children().length == 1) {
       TodoApp.todoList.prepend(TodoApp.addCheckAllTag);
     }
@@ -38,11 +40,20 @@ var TodoApp = {
 
   checkComplete: function() {
     console.log("checkComplete");
-    var todoDescription = $(this).siblings(".todo-description"); 
-    if($(this).is(":checked"))
+    console.log(this);
+    TodoApp.checkCompleteOnElement($(this));
+  },
+
+  checkCompleteOnElement: function($element) {
+    console.log("checkCompleteOnElement");
+    console.log($element);
+    var todoDescription = $element.siblings(".todo-description");
+    if($element.is(":checked")) {
       todoDescription.css("text-decoration","line-through");
-    else 	 
+    }
+    else {
       todoDescription.css("text-decoration","");
+    }
   },
 
   removeItem: function() {
@@ -55,6 +66,7 @@ var TodoApp = {
   },
 
   removeAll: function() {
+    console.log("removeAll");
     this.todoList.empty();
   },
 
@@ -79,6 +91,7 @@ var TodoApp = {
       console.log(jsonArray[i]);
 
 
+
     }
 
   },
@@ -93,13 +106,30 @@ var TodoApp = {
 
   ////
 
-  addTodoTag: function(value) {
+  addTodoTag: function(value,completed) {
+    console.log("addTodoTag: "+value+", "+completed);
+    var checked = '';
+    if (true===completed) {
+      checked = ' checked';
+    }
     var item = $("<div class='todo-item'></div>");
-    item.append($("<input type ='checkbox' class='check-todo'>"));
+    var inputTag = $("<input type ='checkbox' class='check-todo'"+checked+">");
+    item.append(inputTag);
+
+    
+
     var action = $("<div class='todo-description'></div>");
     action.text(value);
     item.append(action);
     item.append($("<a class='todo-remove'>  </a>"));
+
+    if (true===completed) {
+      console.log("addTodoTag .. "+value+", "+completed);
+      console.log(inputTag[0]);
+      TodoApp.checkCompleteOnElement(inputTag);
+    }
+
+
     return item;
   },
 
@@ -108,12 +138,12 @@ var TodoApp = {
     return checkAllTag;
   },
 
-  //// [ { id: 0, userId: 1, title:'learn angular', completed:false } ]
+  //// [ { id: 0, userId: 1, title:'learn angular', completed:false } ] .
 
   debug1: function() {
     console.log("debug1");
-    // TodoApp.addTodoToList("uno");
-    // TodoApp.addTodoToList("dos");
+    TodoApp.addTodoToList("uno",false);
+    TodoApp.addTodoToList("dos",true);
     // TodoApp.removeAll();
     console.log(TodoApp.userId);
   },
