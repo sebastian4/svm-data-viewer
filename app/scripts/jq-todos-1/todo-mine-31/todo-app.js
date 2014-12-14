@@ -6,14 +6,16 @@ var TodoApp = {
     this.todoControl = $('#todo-control');
     this.todoSyncButton = $('#todo-sync-btn');
     this.todoArchiveButton = $('#todo-archive-btn');
-    this.todoDebugButton = $('#todo-debug-btn');
+    this.todoD1Button = $('#todo-d1-btn');
+    this.todoD2Button = $('#todo-d2-btn');
     this.todoInput.on('change', this.addTodo);   
     this.todoList.on('change','.check-todo',this.checkComplete);
     this.todoList.on('click','.todo-remove', this.removeItem);
     this.todoList.on('click','#todo-check-all', this.checkAll);
     this.todoSyncButton.on('click', this.sync);
     this.todoArchiveButton.on('click', this.archiving);
-    this.todoDebugButton.on('click', this.debug);
+    this.todoD1Button.on('click', this.debug1);
+    this.todoD2Button.on('click', this.debug2);
   },
 
   ////
@@ -21,16 +23,16 @@ var TodoApp = {
   addTodo: function() {
     console.log("addTodo");
     var value = TodoApp.todoInput.val();
+    TodoApp.addTodoToList(value);
+    TodoApp.todoInput.val("");
+  },
+
+  addTodoToList: function(value) {
     TodoApp.todoList.append(TodoApp.addTodoTag(value));
     if(TodoApp.todoList.children().length == 1) {
       TodoApp.todoList.prepend(TodoApp.addCheckAllTag);
     }
-    TodoApp.todoInput.val("");
-    TodoApp.todoList.slideDown();		
-  },
-
-  addTodoToList: function() {
-
+    TodoApp.todoList.slideDown(); 
   },
 
   checkComplete: function() {
@@ -86,8 +88,13 @@ var TodoApp = {
 
   ////
 
-  debug: function() {
-    console.log("debug");
+  debug1: function() {
+    console.log("debug1");
+    TodoApp.addTodoToList("uno");
+  },
+
+  debug2: function() {
+    console.log("debug2");
   }
 
 };
