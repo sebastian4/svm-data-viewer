@@ -20,13 +20,17 @@ var TodoApp = {
 
   addTodo: function() {
     console.log("addTodo");
-    TodoApp.value = TodoApp.todoInput.val();
-    TodoApp.todoList.append(TodoApp.addTodoTag);
+    var value = TodoApp.todoInput.val();
+    TodoApp.todoList.append(TodoApp.addTodoTag(value));
     if(TodoApp.todoList.children().length == 1) {
       TodoApp.todoList.prepend(TodoApp.addCheckAllTag);
     }
     TodoApp.todoInput.val("");
     TodoApp.todoList.slideDown();		
+  },
+
+  addTodoToList: function() {
+
   },
 
   checkComplete: function() {
@@ -65,11 +69,11 @@ var TodoApp = {
 
   ////
 
-  addTodoTag: function() {
+  addTodoTag: function(value) {
     var item = $("<div class='todo-item'></div>");
     item.append($("<input type ='checkbox' class='check-todo'>"));
     var action = $("<div class='todo-description'></div>");
-    action.text(TodoApp.value);
+    action.text(value);
     item.append(action);
     item.append($("<a class='todo-remove'>  </a>"));
     return item;
