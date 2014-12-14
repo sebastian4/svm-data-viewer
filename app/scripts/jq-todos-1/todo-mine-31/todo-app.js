@@ -187,7 +187,7 @@ var TodoApp = {
     idTag.text(id);
     item.append(idTag);
 
-    item.append($("<a class='todo-remove'>  </a>"));
+    item.append($("<div class='todo-remove'>X</div>"));
 
     if (true===completed) {
       //console.log(inputTag[0]);

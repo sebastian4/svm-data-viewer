@@ -9,7 +9,7 @@
 .todo-description {
 	display: inline;
 	margin-left: 10px;
-	font-size: 18px;
+	font-size: 1.1em;
 }
 
 .todo-item {
@@ -24,15 +24,13 @@
 
 #todo-input-text {
 	width: 80%;
-	font-size: 20px;
+	font-size: 1.4em;
 	padding: 8px;
 }
 
 .todo-remove {
-	background: url(http://wiki.corda.com/confluence/download/attachments/3802839/dash_remove_icon.png) no-repeat;
 	float:right;
 	width: 4%;
-	height: 20px;
 }
 
 #todo-check-all {
@@ -51,7 +49,7 @@
 
 #todo-app-container {
     background: #ffffff;
-    font-size: 18px;
+    font-size: 1.4em;
     
     width: 96%;
     padding: 12px;
