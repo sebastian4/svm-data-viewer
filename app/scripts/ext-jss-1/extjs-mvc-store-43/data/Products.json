@@ -1,0 +1,41 @@
+{
+    "total" : "6",
+    "products" : [
+        {
+            "id"          : "1",
+            "name"        : "Saxophone",
+            "description" : "C-Sax",
+            "price"       : "897.99"
+        },
+        {
+            "id"          : "2",
+            "name"        : "Violine",
+            "description" : "Very brilliant sound",
+            "price"       : "12000.99"
+        },
+        {
+            "id"          : "3",
+            "name"        : "Duff",
+            "description" : "The one and only",
+            "price"       : "76.99"
+        },
+        {
+            "id"          : "4",
+            "name"        : "Slingshot",
+            "description" : "A weapon for kids",
+            "price"       : "2.95"
+        },
+        {
+            "id"          : "5",
+            "name"        : "Pacifier",
+            "description" : "Keeping your baby quiet",
+            "price"       : "0.89"
+        },
+        {
+            "id"          : "6",
+            "name"        : "Stieg Larsson - Men Who Hate Women",
+            "description" : "First book of the Millennium series",
+            "price"       : "10.95"
+        }
+    ]
+}

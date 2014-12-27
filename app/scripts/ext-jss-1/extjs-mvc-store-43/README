@@ -1,0 +1,51 @@
+README
+======
+
+In this example we are going to program an MVC (Model View Controller) webstore
+with customers, products and orders.
+
+The application is using the directory layout that is recommended by Sencha.
+
+This is the schema we try to realize with ExtJS:
+
+Textual:
+--------
+
+- One customer can make multiple orders.
+- Each order can consist of multiple products.
+
+Schema:
+-------
+
+             Customer       {id, firstname, lastname}
+                |  1
+                |
+                |  n
+              Order         {id, customer_id, date}
+                |  n
+                |
+                |  n
+             Products       {id, name, description, price}
+
+In ExtJS we cannot realize the schema for the same reason we cannot realize this
+schema in SQL: We need an additional association:
+
+             Customer       {id, firstname, lastname}
+                |  1
+                |
+                |  n
+              Order         {id, customer_id, date}
+                |  1
+                |
+                |  n
+            OrderItem       {id, order_id, product_id}
+                |  n
+                |
+                |  1
+             Products       {id, name, description, price}
+
+This way we decouple the Order from the products
+
+Happy coding,
+
+    -kwk

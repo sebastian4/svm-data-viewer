@@ -1,0 +1,17 @@
+{
+	"success" : true,
+	"fields" : [{
+				"xtype" : "textfield",
+				"fieldLabel" : "Username",
+				"name" : "username",
+				"padding" : "10",
+				"allowBlank" : true
+			}, {
+				"xtype" : "textfield",
+				"fieldLabel" : "Password",
+				"name" : "password",
+				"inputType" : "password",
+				"padding" : "10",
+				"allowBlank" : false
+			}]
+}

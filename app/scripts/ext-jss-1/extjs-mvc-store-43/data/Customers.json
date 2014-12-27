@@ -1,0 +1,30 @@
+{
+    "total"     : "5",
+    "customers" : [
+        {
+            "id"        : "1",
+            "lastname"  : "Simpson",
+            "firstname" : "Bart"
+        },
+        {
+            "id"        : "2",
+            "lastname"  : "Simpson",
+            "firstname" : "Lisa"
+        },
+        {
+            "id"        : "3",
+            "lastname"  : "Simpson",
+            "firstname" : "Marge"
+        },
+        {
+            "id"        : "4",
+            "lastname"  : "Simpson",
+            "firstname" : "Homer"
+        },
+        {
+            "id"        : "5",
+            "lastname"  : "Simpson",
+            "firstname" : "Maggy"
+        }
+    ]
+}
