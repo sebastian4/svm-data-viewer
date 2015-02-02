@@ -111,7 +111,7 @@ Ext.define('TodoMVC.view.TodoView', {
                                 xtype:'actioncolumn',
                                 width:50,
                                 items: [{
-                                    icon: 'js/extjs/examples/restful/images/delete.png',
+                                    icon: 'https://cdn2.iconfinder.com/data/icons/aspneticons_v1.0_Nov2006/delete_16x16.gif',
                                     tooltip: 'Delete',
                                     handler: function(grid, rowIndex, colIndex) {
                                         var controller = TodoMVC.controller.TodoCtrl;

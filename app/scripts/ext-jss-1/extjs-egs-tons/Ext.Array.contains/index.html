@@ -36,6 +36,12 @@
                                 var value = Ext.getCmp('key').getValue();
                                 Ext.getCmp('foo').setText(" contains '" + value + "'? " + Ext.Array.contains(arr, value));
                             }
+                        }, {
+                            xtype: 'button',
+                            text: 'reset',
+                            handler: function () {
+                                Ext.getCmp('foo').setText("");
+                            }
                         }]
                     }],
                     items: [{

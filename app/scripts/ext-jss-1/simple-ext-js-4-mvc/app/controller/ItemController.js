@@ -33,6 +33,7 @@ Ext.define('Application.controller.ItemController', {
   },
   onItemSelect: function(selModel, selection) {
     // Executed only when selection is a leaf
+    console.log(selection.raw);
     (selection.data.leaf) ? this.getItemShowDesc().update(selection.raw.description) : null;
   }
 });
