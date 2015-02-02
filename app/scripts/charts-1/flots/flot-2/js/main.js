@@ -9,6 +9,8 @@ $(function() {
         label: "da Line",
         data: data
     }];
+
+    console.log("dataset label: "+dataset.label+" "+dataset.label);
     
     var options = {
         series: {
